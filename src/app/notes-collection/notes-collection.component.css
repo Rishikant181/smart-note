@@ -1,0 +1,50 @@
+/* .main-div {
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.note-card {
+    background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-div {
+        padding: 2vw;
+    }
+
+    .note-card {
+        margin: 2vw;
+        width: 35vw;
+        height: 45vw;  
+    }    
+}
+
+@media only screen and (min-width: 768px) {
+    .main-div {
+        padding: 1vw;
+    }
+
+    .note-card {
+        margin: 1vw;
+        width: 18vw;
+        height: 23vw;  
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .main-div {
+        padding: 1vw;
+    }
+
+    .note-card {
+        margin: 1vw;
+        width: 15vw;
+        height: 19vw;  
+    }
+}
+
+mat-grid-tile {
+    background: white;
+}
+
+*/
