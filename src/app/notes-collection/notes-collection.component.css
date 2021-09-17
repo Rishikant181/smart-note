@@ -1,50 +1,17 @@
-/* .main-div {
+.main-div {
+    width: 100%;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 .note-card {
     background-color: white;
+    width: 18%;
+    aspect-ratio: 1/1.25;
+    margin: 1%;
+    padding: 0;
 }
 
-@media only screen and (max-width: 768px) {
-    .main-div {
-        padding: 2vw;
-    }
-
-    .note-card {
-        margin: 2vw;
-        width: 35vw;
-        height: 45vw;  
-    }    
+.note-card-header {
+    padding: 20px;
 }
-
-@media only screen and (min-width: 768px) {
-    .main-div {
-        padding: 1vw;
-    }
-
-    .note-card {
-        margin: 1vw;
-        width: 18vw;
-        height: 23vw;  
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-    .main-div {
-        padding: 1vw;
-    }
-
-    .note-card {
-        margin: 1vw;
-        width: 15vw;
-        height: 19vw;  
-    }
-}
-
-mat-grid-tile {
-    background: white;
-}
-
-*/
