@@ -6,10 +6,29 @@
 
 .note-card {
     background-color: white;
-    width: 18%;
     aspect-ratio: 1/1.25;
-    margin: 1%;
     padding: 0;
+}
+
+@media only screen and (max-width: 540px) {
+    .note-card {
+        width: 46%;
+        margin: 2%
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    .note-card {
+        width: 29.3333%;
+        margin: 2%
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    .note-card {
+        width: 18%;
+        margin: 1%;
+    }
 }
 
 .note-card-header {

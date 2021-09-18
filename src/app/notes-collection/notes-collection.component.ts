@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NoteList } from 'src/assets/types';
 import { NotesService } from '../notes.service';
 
 @Component({
@@ -9,16 +10,18 @@ import { NotesService } from '../notes.service';
 })
 
 export class NotesCollectionComponent implements OnInit {
-    notes:string[] = [];
+    // Global vars    
+    // To store the list of notes
+    noteList:NoteList = {
+        "title": []
+    };
     
     constructor(private notesService:NotesService) {
-        this.notes = notesService.getNotes();
+        notesService.getNotesList().subscribe((data) => {
+            this.noteList = data;
+        });
     }
 
     ngOnInit(): void {
-    }
-
-    onClick(): void {
-        console.log("Hello World");
     }
 }

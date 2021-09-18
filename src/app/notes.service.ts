@@ -1,27 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { NoteList } from 'src/assets/types';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
+
 export class NotesService {
-    // Global vars
-    NOTES = [
-        "Note1",
-        "Note2",
-        "Note3",
-        "Note4",
-        "Note5",
-        "Note6",
-        "Note7",
-        "Note8",
-        "Note9",
-        "Note10",
-    ];
     
-    constructor() {         
+    // The constructor
+    constructor(private http: HttpClient) {
     }
 
-    getNotes(): string[] {
-        return this.NOTES;
+    // Method to get list of all notes
+    getNotesList(): Observable<NoteList> {
+        return this.http.get<NoteList>(`${environment.apiUrl}/rishikant181/projects/list`, { observe: 'body', responseType: 'json' })
     }
 }
