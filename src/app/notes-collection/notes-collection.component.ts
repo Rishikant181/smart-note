@@ -24,4 +24,9 @@ export class NotesCollectionComponent implements OnInit {
 
     ngOnInit(): void {
     }
+
+    // Method to handle clicking of note card
+    noteCardClick(note: any): void {
+        console.log(note);
+    }
 }

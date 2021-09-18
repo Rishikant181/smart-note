@@ -10,6 +10,10 @@
     padding: 0;
 }
 
+.note-card:hover {
+    box-shadow: 0 0 25px lightsteelblue;
+}
+
 @media only screen and (max-width: 540px) {
     .note-card {
         width: 46%;
