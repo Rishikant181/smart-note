@@ -1,8 +1,8 @@
 <div class="main-div">    
-    <mat-card *ngFor='let note of noteList.title' class="note-card" (click)="noteCardClick(note)">
+    <mat-card *ngFor='let note of noteList.notes' class="note-card" (click)="noteCardClick(note)">
         <mat-card-header class="note-card-header">
-            <mat-card-title>{{note}}</mat-card-title>
-            <mat-card-subtitle>This is a text message</mat-card-subtitle>
+            <mat-card-title>{{note.title}}</mat-card-title>
+            <mat-card-subtitle>{{note.subtitle}}</mat-card-subtitle>
         </mat-card-header>
     </mat-card>
 </div>

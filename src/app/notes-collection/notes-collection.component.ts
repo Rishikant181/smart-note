@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NoteList } from 'src/assets/types';
 import { NotesService } from '../notes.service';
+import { NoteList } from '../models/notes.model';
 
 @Component({
     selector: 'app-notes-collection',
@@ -12,14 +12,15 @@ import { NotesService } from '../notes.service';
 export class NotesCollectionComponent implements OnInit {
     // Global vars    
     // To store the list of notes
-    noteList:NoteList = {
-        "title": []
-    };
+    noteList:NoteList;
     
     constructor(private notesService:NotesService) {
-        notesService.getNotesList().subscribe((data) => {
-            this.noteList = data;
-        });
+        notesService.getNoteList().subscribe((data) => {
+            this.noteList = new NoteList;
+            this.noteList.deserialize(data);
+            console.log(this.noteList)
+        })
+        console.log(this.noteList)
     }
 
     ngOnInit(): void {
