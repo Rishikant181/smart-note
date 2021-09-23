@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NotesService } from '../notes.service';
-import { NoteList } from '../models/notes.model';
+import { NoteList, NoteMeta } from '../models/notes.model';
 
 @Component({
     selector: 'app-notes-collection',
@@ -11,23 +11,28 @@ import { NoteList } from '../models/notes.model';
 
 export class NotesCollectionComponent implements OnInit {
     // Global vars    
-    // To store the list of notes
-    noteList:NoteList;
+    noteList: NoteList;                                                     // To store the list of notes
+    noteMeta: NoteMeta;                                                     // To store the details of each note
     
     constructor(private notesService:NotesService) {
         notesService.getNoteList().subscribe((data) => {
-            this.noteList = new NoteList;
+            this.noteList = new NoteList();
             this.noteList.deserialize(data);
-            console.log(this.noteList)
+            console.log(this.noteList)              //
+        }, (err) => {
+            console.log(err)
         })
-        console.log(this.noteList)
     }
 
     ngOnInit(): void {
     }
 
-    // Method to handle clicking of note card
+    // Method to show details of a note in a Dialog
     noteCardClick(note: any): void {
-        console.log(note);
+        this.notesService.getNoteMeta(note.id).subscribe((data) => {
+            this.noteMeta = new NoteMeta();
+            this.noteMeta.deserialize(data);
+            console.log(this.noteMeta)              //
+        })
     }
 }

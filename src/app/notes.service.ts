@@ -16,6 +16,11 @@ export class NotesService {
 
     // Method to get list of all notes
     getNoteList(): Observable<any> {
-        return this.http.get<any>(`${environment.apiUrl}/rishikant181/projects/list`, { observe: 'body', responseType: 'json' })
+        return this.http.get<any>(`${environment.apiUrl}/user/projects/list/`, { observe: 'body', responseType: 'json' });
+    }
+
+    // Method to get details of the note using note id
+    getNoteMeta(id: string): Observable<any> {
+        return this.http.get<any>(`${environment.apiUrl}/user/projects/list/${id}`, { observe: 'body', responseType: 'json' });
     }
 }

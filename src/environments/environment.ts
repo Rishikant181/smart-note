@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'https://cd7d4966-6aa1-416f-9856-37b2db5b0ca2.mock.pstmn.io'
+    apiUrl: 'http://localhost:3000'
 };
 
 /*
