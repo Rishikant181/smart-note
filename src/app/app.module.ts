@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +23,7 @@ import { NoteDetailsComponent } from './note-details/note-details.component';
         HttpClientModule,
         BrowserAnimationsModule,
         MatCardModule,
+        MatDialogModule,
         MatGridListModule,
     ],
     providers: [],
