@@ -6,7 +6,7 @@ import { NoteMeta } from '../models/notes.model';
 @Component({
     selector: 'app-note-details',
     templateUrl: './note-details.component.html',
-    styleUrls: ['./note-details.component.css']
+    styleUrls: ['./note-details.component.scss']
 })
 export class NoteDetailsComponent implements OnInit {
 
