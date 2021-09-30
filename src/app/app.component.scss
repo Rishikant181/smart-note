@@ -1,0 +1,7 @@
+@use '~@angular/material' as mat;
+
+@import '/src/assets/theme.scss';
+
+.toolbar {
+    box-shadow: 0 0 25px mat.get-color-from-palette($mat-shadow, 500);
+}

@@ -2,12 +2,13 @@
 
 @include mat.core();
 
-$mat-primary: mat.define-palette(mat.$blue-palette);
-$mat-secondary: mat.define-palette(mat.$blue-palette);
-$mat-accent: mat.define-palette(mat.$blue-palette);
-$mat-warn: mat.define-palette(mat.$red-palette);
+$mat-primary: mat.define-palette(mat.$blue-palette, 600);
+$mat-secondary: mat.define-palette(mat.$blue-palette, 200);
+$mat-accent: mat.define-palette(mat.$blue-palette, 50);
+$mat-warn: mat.define-palette(mat.$red-palette, 400);
+$mat-shadow: mat.define-palette(mat.$blue-gray-palette, 200);
 
-$light-blue: mat.define-light-theme((
+$blue-light: mat.define-light-theme((
     color: (
         primary: $mat-primary,
         secondary: $mat-secondary,
@@ -16,4 +17,4 @@ $light-blue: mat.define-light-theme((
     )
 ));
 
-@include mat.all-component-themes($light-blue);
+@include mat.all-component-themes($blue-light);
