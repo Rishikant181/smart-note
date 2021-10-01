@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button'
 import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +31,7 @@ import { NoteDetailsComponent } from './note-details/note-details.component';
         MatSidenavModule,
         MatCardModule,
         MatDialogModule,
+        MatButtonModule,
         MatGridListModule,
     ],
     providers: [],
