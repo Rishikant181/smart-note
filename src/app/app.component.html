@@ -1,5 +1,12 @@
-<mat-toolbar color="primary" class="toolbar">
-    <button mat-icon-button><mat-icon>menu</mat-icon></button>
-    <span>Hello</span>
-</mat-toolbar>
-<app-notes-collection></app-notes-collection>
+<mat-drawer-container>
+    <mat-drawer #drawer mode="over" opened>
+        <h1>Projects</h1>
+    </mat-drawer>
+    <div class="sidenav-content">
+        <mat-toolbar color="primary" class="toolbar">
+            <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+            <span>Project_Name</span>
+        </mat-toolbar>
+        <app-notes-collection></app-notes-collection>
+    </div>
+</mat-drawer-container>

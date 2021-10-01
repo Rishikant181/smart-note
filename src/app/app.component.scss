@@ -2,6 +2,43 @@
 
 @import '/src/assets/theme.scss';
 
-.toolbar {
+mat-toolbar {
     box-shadow: 0 0 25px mat.get-color-from-palette($mat-shadow, 500);
+}
+
+mat-toolbar > button {
+    background: inherit;
+    border: none;
+    margin-right: 5px;
+    color: whitesmoke;
+}
+
+mat-drawer-container {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 540px) {
+    mat-drawer {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    mat-drawer {
+        width: 50%;
+        padding: 20px;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    mat-drawer {
+        width: 20%;
+        padding: 20px;
+    }
+}
+
+.sidenav-content {
+    background-color: mat.get-color-from-palette($mat-accent);
 }
