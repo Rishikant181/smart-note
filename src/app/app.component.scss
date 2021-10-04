@@ -19,7 +19,7 @@ mat-sidenav {
 }
 
 mat-sidenav-content {
-    background-color: mat.get-color-from-palette($mat-accent);
+    background-color: mat.get-color-from-palette($mat-background);
     width: 100%;
 }
 
