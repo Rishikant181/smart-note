@@ -14,12 +14,14 @@ import { AppComponent } from './app.component';
 import { NotesCollectionComponent } from './notes-collection/notes-collection.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoteDetailsComponent } from './note-details/note-details.component';
+import { NewNoteComponent } from './new-note/new-note.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NotesCollectionComponent,
         NoteDetailsComponent,
+        NewNoteComponent,
     ],
     imports: [
         BrowserModule,

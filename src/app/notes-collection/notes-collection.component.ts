@@ -4,6 +4,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NotesService } from '../notes.service';
 import { NoteList, NoteMeta } from '../models/notes.model';
 import { NoteDetailsComponent } from '../note-details/note-details.component';
+import { NewNoteComponent } from '../new-note/new-note.component';
 
 @Component({
     selector: 'app-notes-collection',
@@ -41,5 +42,10 @@ export class NotesCollectionComponent implements OnInit {
                 panelClass: 'note-detail'
             })
         })
+    }
+
+    // Method to show modal for addition of new note
+    addNoteClick(): void {
+        this.dialog.open(NewNoteComponent);
     }
 }
