@@ -21,10 +21,24 @@ export class NoteMeta implements Deserializable {
 // Object to store the note list
 export class NoteList implements Deserializable {
     // Member data
-    notes:NoteMeta[];                                               // To store list of notes' metadata
+    project: string;
+    notes: NoteMeta[];                                              // To store list of notes' metadata
 
     // Member methods
     // Method to deserialize input data into NoteList object
+    deserialize(data: any) {
+        Object.assign(this, data);
+        return this;
+    }
+}
+
+// Object to store the meta of a project
+export class ProjectMeta implements Deserializable {
+    // Member data
+    name: string;                                                  // To store project name
+
+    // Member methoods
+    // Method to deserialize input data into ProjectMeta object
     deserialize(data: any) {
         Object.assign(this, data);
         return this;

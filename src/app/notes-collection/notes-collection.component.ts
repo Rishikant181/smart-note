@@ -45,7 +45,11 @@ export class NotesCollectionComponent implements OnInit {
     }
 
     // Method to show modal for addition of new note
-    addNoteClick(): void {
-        this.dialog.open(NewNoteComponent);
+    addNoteClick(project: string): void {
+        this.dialog.open(NewNoteComponent, {
+            data: {
+                "name": project
+            }
+        });
     }
 }

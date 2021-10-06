@@ -9,8 +9,11 @@ import { NoteMeta } from '../models/notes.model';
     styleUrls: ['./note-details.component.scss']
 })
 export class NoteDetailsComponent implements OnInit {
+    note: NoteMeta;                                                 // To store details of note
 
-    constructor(@Inject(MAT_DIALOG_DATA) public data:NoteMeta) {}
+    constructor(@Inject(MAT_DIALOG_DATA) public data:NoteMeta) {
+        this.note = data;
+    }
 
     ngOnInit(): void {
     }
