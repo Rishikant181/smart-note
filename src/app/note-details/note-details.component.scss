@@ -1,3 +1,7 @@
 @use '~@angular/material' as mat;
 
 @import '/src/assets/theme.scss';
+
+.note-detail {
+    width: 100%;
+}

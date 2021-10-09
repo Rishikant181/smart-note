@@ -1,6 +1,9 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
-    <span class="toolbar-header">Project_Name</span>
+    <button *ngIf="loggedIn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <span class="toolbar-header">{{toolbarTitle}}</span>
+    <span class="horizontal-spacer"></span>
+    <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="showLoginDialog()">Login</button>
+    <button *ngIf="!loggedIn" mat-flat-button color="accent">Signup</button>
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav #drawer mode="over" fixedInViewport="true" fixedTopGap="55" autoFocus="false">
