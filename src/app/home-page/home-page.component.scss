@@ -1,3 +1,36 @@
 .main-div {
     min-height: 100vh;
 }
+
+.banner {
+    width: 100%;
+    background: white;
+    display: flex;
+}
+
+.banner-text {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.banner-title {
+    margin: 20px;
+    display: block;
+}
+
+.banner-subtitle {
+    margin: 20px;
+    display: block;
+}
+
+@media only screen and (max-width: 720px) {
+    .banner {
+        height: 40vh;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    .banner {
+        height: 50vh;
+    }
+}
