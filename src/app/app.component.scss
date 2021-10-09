@@ -7,6 +7,7 @@ mat-toolbar {
     position: sticky;
     top: 0;
     z-index: 10;
+    padding: 5px;
 }
 
 mat-sidenav-container {
@@ -39,4 +40,8 @@ mat-sidenav-content {
     mat-sidenav {
         width: 20%;
     }
+}
+
+.toolbar-header {
+    margin: 0px 5px 0px 5px;
 }
