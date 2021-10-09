@@ -17,6 +17,7 @@ import { NotesCollectionComponent } from './notes-collection/notes-collection.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoteDetailsComponent } from './note-details/note-details.component';
 import { NewNoteComponent } from './new-note/new-note.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { NewNoteComponent } from './new-note/new-note.component';
         NotesCollectionComponent,
         NoteDetailsComponent,
         NewNoteComponent,
+        HomePageComponent,
     ],
     imports: [
         BrowserModule,
