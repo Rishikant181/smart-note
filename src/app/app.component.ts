@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
+import { LoginModalComponent } from './login-modal/login-modal.component';
 
 @Component({
     selector: 'app-root',
@@ -11,13 +14,13 @@ export class AppComponent {
     loggedIn: boolean;                                                 // To store whether user is looged in or not
 
     // The constructor
-    constructor() {
+    constructor(public dialog: MatDialog) {
         this.toolbarTitle = "Smart Notes";
         this.loggedIn = false;
     }
 
     // Method to show login dialog
     showLoginDialog(): void {
-        console.log("Login")
+        this.dialog.open(LoginModalComponent);
     }
 }

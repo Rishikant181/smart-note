@@ -1,0 +1,8 @@
+@use '~@angular/material' as mat;
+
+@import '/src/assets/theme.scss';
+
+.main-div {
+    width: 25vw;
+    height: 60vh;
+}

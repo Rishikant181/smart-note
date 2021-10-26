@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoteDetailsComponent } from './note-details/note-details.component';
 import { NewNoteComponent } from './new-note/new-note.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { LoginModalComponent } from './login-modal/login-modal.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { HomePageComponent } from './home-page/home-page.component';
         NoteDetailsComponent,
         NewNoteComponent,
         HomePageComponent,
+        LoginModalComponent,
     ],
     imports: [
         BrowserModule,
