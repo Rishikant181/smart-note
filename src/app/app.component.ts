@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { LoginModalComponent } from './login-modal/login-modal.component';
+import { SignupModalComponent } from './signup-modal/signup-modal.component';
 
 @Component({
     selector: 'app-root',
@@ -22,5 +23,10 @@ export class AppComponent {
     // Method to show login dialog
     showLoginDialog(): void {
         this.dialog.open(LoginModalComponent);
+    }
+
+    // Method to show signup modal
+    showSignupDialog(): void {
+        this.dialog.open(SignupModalComponent);
     }
 }

@@ -3,7 +3,7 @@
     <span class="toolbar-header">{{toolbarTitle}}</span>
     <span class="horizontal-spacer"></span>
     <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="showLoginDialog()">Login</button>
-    <button *ngIf="!loggedIn" mat-flat-button color="accent">Signup</button>
+    <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="showSignupDialog()">Signup</button>
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav #drawer mode="over" fixedInViewport="true" fixedTopGap="55" autoFocus="false">

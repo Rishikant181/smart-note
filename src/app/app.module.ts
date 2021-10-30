@@ -19,6 +19,7 @@ import { NoteDetailsComponent } from './note-details/note-details.component';
 import { NewNoteComponent } from './new-note/new-note.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
+import { SignupModalComponent } from './signup-modal/signup-modal.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
         NewNoteComponent,
         HomePageComponent,
         LoginModalComponent,
+        SignupModalComponent,
     ],
     imports: [
         BrowserModule,

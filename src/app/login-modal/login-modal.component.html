@@ -1,7 +1,13 @@
 <div class="main-div">
-    <span class="mat-headline horizontal-spacer">Welcome back !</span>
+    <p class="mat-headline">Welcome</p>
     <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput placeholder="Enter your registered email">
     </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Enter your password">
+    </mat-form-field>
+    <br>
+    <button mat-flat-button color="primary" (click)="loginClick()">Login</button>
 </div>

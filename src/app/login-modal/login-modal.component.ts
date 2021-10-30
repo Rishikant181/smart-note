@@ -13,4 +13,9 @@ export class LoginModalComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    // Method to handle clicking of login button
+    loginClick(): void {
+        console.log("Login");
+    }
+
 }
