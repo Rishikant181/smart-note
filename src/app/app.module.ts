@@ -20,6 +20,7 @@ import { NewNoteComponent } from './new-note/new-note.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { SignupModalComponent } from './signup-modal/signup-modal.component';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
     declarations: [
@@ -45,6 +46,7 @@ import { SignupModalComponent } from './signup-modal/signup-modal.component';
         MatButtonModule,
         MatInputModule,
         MatFormFieldModule,
+        GraphQLModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
