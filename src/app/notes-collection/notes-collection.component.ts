@@ -20,12 +20,7 @@ export class NotesCollectionComponent implements OnInit {
     constructor(
         private notesService:NotesService,
         private dialog:MatDialog) {
-        notesService.getNoteList().subscribe((data) => {
-            this.noteList = new NoteList();
-            this.noteList.deserialize(data);
-        }, (err) => {
-            console.log(err)
-        })
+        this.noteList = notesService.getNoteList();
     }
 
     ngOnInit(): void {
@@ -33,15 +28,11 @@ export class NotesCollectionComponent implements OnInit {
 
     // Method to show details of a note in a Dialog
     noteCardClick(note: any): void {
-        this.notesService.getNoteMeta(note.id).subscribe((data) => {
-            this.noteMeta = new NoteMeta();
-            this.noteMeta.deserialize(data);
-            console.log(this.noteMeta)              //
-            this.dialog.open(NoteDetailsComponent, {
-                data: note,
-                panelClass: 'note-detail'
-            })
-        })
+        this.noteMeta = this.notesService.getNoteMeta(note.id);
+        this.dialog.open(NoteDetailsComponent, {
+            data: note,
+            panelClass: 'note-detail'
+        });
     }
 
     // Method to show modal for addition of new note
