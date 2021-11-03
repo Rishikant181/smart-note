@@ -21,6 +21,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { SignupModalComponent } from './signup-modal/signup-modal.component';
 import { GraphQLModule } from './graphql.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import { GraphQLModule } from './graphql.module';
         HomePageComponent,
         LoginModalComponent,
         SignupModalComponent,
+        DashboardComponent,
     ],
     imports: [
         BrowserModule,
