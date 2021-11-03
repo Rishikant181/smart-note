@@ -10,6 +10,7 @@
         <h1>Projects</h1>
     </mat-sidenav>
     <mat-sidenav-content>
-        <app-notes-collection></app-notes-collection>
+        <app-home-page *ngIf="!loggedIn"></app-home-page>
+        <app-notes-collection *ngIf="loggedIn"></app-notes-collection>
     </mat-sidenav-content>
 </mat-sidenav-container>

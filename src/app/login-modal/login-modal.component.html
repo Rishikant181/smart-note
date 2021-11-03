@@ -1,12 +1,13 @@
 <div class="main-div">
     <p class="mat-headline">Welcome</p>
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" [style.width.%]="90">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Enter your registered email">
+        <input matInput [(ngModel)]="email" placeholder="Enter your registered email">
     </mat-form-field>
-    <mat-form-field appearance="outline">
+    <br>
+    <mat-form-field appearance="outline" [style.width.%]="90">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Enter your password">
+        <input matInput [(ngModel)]="pass" placeholder="Enter your password">
     </mat-form-field>
     <br>
     <button mat-flat-button color="primary" (click)="loginClick()">Login</button>

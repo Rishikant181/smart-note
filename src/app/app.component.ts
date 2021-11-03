@@ -13,16 +13,30 @@ export class AppComponent {
     title: string = 'smart-note';
     toolbarTitle: string;                                              // To store text to be shown on toolbar title
     loggedIn: boolean;                                                 // To store whether user is looged in or not
+    
+    // Init hook method to initialise windows height
+    ngOnInit() {
+        const viewHeight = window.innerHeight;
+        const viewWidth = window.innerWidth;
+        const viewport = document.querySelector("meta[name=viewport]");
+        viewport?.setAttribute("content", "height=" + viewHeight + "px, width=" + viewWidth + "px, initial-scale=1.0");
+    }
 
     // The constructor
     constructor(public dialog: MatDialog) {
         this.toolbarTitle = "Smart Notes";
-        this.loggedIn = true;
+        this.loggedIn = false;
     }
 
     // Method to show login dialog
     showLoginDialog(): void {
-        this.dialog.open(LoginModalComponent);
+        const dialogRef = this.dialog.open(LoginModalComponent, { maxWidth: "100%" });
+
+        // Get login status after closing dialog
+        dialogRef.afterClosed().subscribe(res => {
+            this.loggedIn = res;
+            console.log(res);
+        });
     }
 
     // Method to show signup modal

@@ -8,4 +8,9 @@ import { Observable } from 'rxjs';
 export class UserService {
 
     constructor() { }
+
+    // Method to handle login of user
+    verifyLoginCredentials(email: String, pass: String): boolean {
+        return true;
+    }
 }
