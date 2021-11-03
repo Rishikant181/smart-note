@@ -35,7 +35,6 @@ export class AppComponent {
         // Get login status after closing dialog
         dialogRef.afterClosed().subscribe(res => {
             this.loggedIn = res;
-            console.log(res);
         });
     }
 

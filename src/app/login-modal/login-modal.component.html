@@ -10,5 +10,6 @@
         <input matInput [(ngModel)]="pass" placeholder="Enter your password">
     </mat-form-field>
     <br>
+    <p class="mat-small warn" color="warn" *ngIf="invalidInputWarn">Please enter a valid email and password!</p>
     <button mat-flat-button color="primary" (click)="loginClick()">Login</button>
 </div>

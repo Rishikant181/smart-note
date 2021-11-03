@@ -17,6 +17,10 @@ body {
     font-weight: 300;
 }
 
+.warn {
+    color: mat.get-color-from-palette($mat-warn);
+}
+
 .horizontal-spacer {
     margin-left: auto;
     margin-right: auto;

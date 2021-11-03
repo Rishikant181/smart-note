@@ -12,10 +12,12 @@ export class LoginModalComponent implements OnInit {
 
     email: String;                                                      // To store the email
     pass: String;                                                       // To store the password
+    loginStatus: boolean;                                               // To store status of login
+    invalidInputWarn: boolean;                                          // To store if the input was invalid
     @Output() loginStatusChangeEvent = new EventEmitter<boolean>();     // To emit new login status to parent
 
     // The constructor
-    constructor(
+    constructor( 
         public dialogRef: MatDialogRef<LoginModalComponent>,
         private userService: UserService
     ) { }
@@ -25,11 +27,17 @@ export class LoginModalComponent implements OnInit {
 
     // Method to handle clicking of login button
     loginClick(): void {
-        // Verify credentials
-        var loginStatus = this.userService.verifyLoginCredentials(this.email, this.pass);
-        
-        // Closing dialog and passing login status back to parent
-        this.dialogRef.close({ loginStatus: loginStatus });
+        // Validating input
+        if(this.email && this.pass) {
+            // Verify credentials
+            this.loginStatus = this.userService.verifyLoginCredentials(this.email, this.pass);
+            
+            // Closing dialog and passing login status back to parent
+            this.dialogRef.close({ loginStatus: this.loginStatus });
+        }
+        else {
+            this.invalidInputWarn = true;
+        }
     }
 
 }
