@@ -10,7 +10,10 @@
         <h1>Projects</h1>
     </mat-sidenav>
     <mat-sidenav-content>
+        <!--
         <app-home-page *ngIf="!loggedIn"></app-home-page>
         <app-notes-collection *ngIf="loggedIn"></app-notes-collection>
+        -->
+        <app-dashboard (titleEmitter)="setToolbarTitle($event)"></app-dashboard>
     </mat-sidenav-content>
 </mat-sidenav-container>

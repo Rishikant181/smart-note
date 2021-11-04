@@ -2,6 +2,18 @@
 
 @import '/src/assets/theme.scss';
 
+mat-card {
+    padding: 0;
+}
+
+mat-card-title {
+    margin: 10px;
+}
+
+mat-card-subtitle {
+    margin: 10px;
+}
+
 .main-div {
     width: 100%;
     min-height: 100vh;
@@ -12,7 +24,6 @@
 .note-card {
     background-color: white;
     aspect-ratio: 1/1.25;
-    padding: 0;
 }
 
 .note-card:hover {

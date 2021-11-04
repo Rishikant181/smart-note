@@ -1,0 +1,63 @@
+@use '~@angular/material' as mat;
+
+@import '/src/assets/theme.scss';
+
+mat-card {
+    padding: 0;
+}
+
+mat-card-title {
+    padding: 20px;
+}
+
+@media only screen and (max-width: 540px) {
+    mat-card-title {
+        text-align: center;
+    }
+}
+
+.main-div {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.heading {
+    margin: 20px;
+}
+
+@media only screen and (max-width: 540px) {
+    .heading {
+        text-align: center;
+    }
+}
+
+.dash-card {
+    aspect-ratio: 1 / 0.75;
+}
+
+@media only screen and (max-width: 540px) {
+    .dash-card {
+        margin: 2%;
+        width: 98%;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    .dash-card {
+        margin: 2%;
+        width: 46%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .dash-card {
+        margin: 1%;
+        width: 31.33%;
+    }
+}
+
+.stats-card {
+    
+}

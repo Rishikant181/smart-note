@@ -25,7 +25,12 @@ export class AppComponent {
     // The constructor
     constructor(public dialog: MatDialog) {
         this.toolbarTitle = "Smart Notes";
-        this.loggedIn = false;
+        this.loggedIn = true;
+    }
+
+    // Method to set toolbar title
+    setToolbarTitle(title: String): void {
+        this.toolbarTitle = title.toString();
     }
 
     // Method to show login dialog
