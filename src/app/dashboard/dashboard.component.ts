@@ -5,6 +5,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.scss']
 })
+
 export class DashboardComponent implements OnInit {
 
     @Output() titleEmitter = new EventEmitter<String>();

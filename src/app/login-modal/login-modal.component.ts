@@ -10,8 +10,8 @@ import { UserService } from '../user.service';
 })
 export class LoginModalComponent implements OnInit {
 
-    email: String;                                                      // To store the email
-    pass: String;                                                       // To store the password
+    email: string;                                                      // To store the email
+    pass: string;                                                       // To store the password
     loginStatus: boolean;                                               // To store status of login
     invalidInputWarn: boolean;                                          // To store if the input was invalid
     @Output() loginStatusChangeEvent = new EventEmitter<boolean>();     // To emit new login status to parent
@@ -30,7 +30,7 @@ export class LoginModalComponent implements OnInit {
         // Validating input
         if(this.email && this.pass) {
             // Verify credentials
-            this.loginStatus = this.userService.verifyLoginCredentials(this.email, this.pass);
+            this.loginStatus = this.userService.verifyLoginCreds(this.email, this.pass);
             
             // Closing dialog and passing login status back to parent
             this.dialogRef.close({ loginStatus: this.loginStatus });
@@ -38,6 +38,11 @@ export class LoginModalComponent implements OnInit {
         else {
             this.invalidInputWarn = true;
         }
+    }
+
+    // Method to cancel login and close dialog
+    cancelClick(): void {
+        this.dialogRef.close();
     }
 
 }

@@ -25,7 +25,7 @@ export class AppComponent {
     // The constructor
     constructor(public dialog: MatDialog) {
         this.toolbarTitle = "Smart Notes";
-        this.loggedIn = true;
+        this.loggedIn = false;
     }
 
     // Method to set toolbar title
@@ -45,6 +45,6 @@ export class AppComponent {
 
     // Method to show signup modal
     showSignupDialog(): void {
-        this.dialog.open(SignupModalComponent);
+        this.dialog.open(SignupModalComponent, { maxWidth: "100%" });
     }
 }

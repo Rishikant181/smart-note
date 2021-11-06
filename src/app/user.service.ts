@@ -10,7 +10,12 @@ export class UserService {
     constructor() { }
 
     // Method to handle login of user
-    verifyLoginCredentials(email: String, pass: String): boolean {
+    verifyLoginCreds(email: string, pass: string): boolean {
+        return true;
+    }
+
+    // Method to validate credentials
+    validateCreds(email: string, pass: string): boolean {
         return true;
     }
 }

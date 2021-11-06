@@ -1,5 +1,5 @@
 <div class="main-div">
-    <p class="mat-headline">Welcome</p>
+    <p class="mat-headline">Welcome back!</p>
     <mat-form-field appearance="outline" [style.width.%]="90">
         <mat-label>Email</mat-label>
         <input matInput [(ngModel)]="email" placeholder="Enter your registered email">
@@ -7,9 +7,10 @@
     <br>
     <mat-form-field appearance="outline" [style.width.%]="90">
         <mat-label>Password</mat-label>
-        <input matInput [(ngModel)]="pass" placeholder="Enter your password">
+        <input matInput [(ngModel)]="pass" placeholder="Enter your password" type="password">
     </mat-form-field>
     <br>
     <p class="mat-small warn" color="warn" *ngIf="invalidInputWarn">Please enter a valid email and password!</p>
     <button mat-flat-button color="primary" (click)="loginClick()">Login</button>
+    <button mat-flat-button color="accent" (click)="cancelClick()">Cancel</button>
 </div>

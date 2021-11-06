@@ -1,26 +1,28 @@
-@use '~@angular/material' as mat;
-
-@import '/src/assets/theme.scss';
+button {
+    margin: 5px;
+}
 
 .main-div {
-    height: 60vh;
     text-align: center;
 }
 
 @media only screen and (max-width: 540px) {
     .main-div {
         width: 80vw;
+        aspect-ratio: 1 / 0.8;
     }
 }
 
 @media only screen and (min-width: 540px) {
     .main-div {
         width: 50vw;
+        aspect-ratio: 1 / 0.8;
     }
 }
 
 @media only screen and (min-width: 1024px) {
     .main-div {
         width: 25vw;
+        aspect-ratio: 1 / 1.25;
     }
 }
