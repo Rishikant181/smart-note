@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 import { UserService } from '../user.service';
 
@@ -19,7 +20,8 @@ export class LoginModalComponent implements OnInit {
     // The constructor
     constructor( 
         public dialogRef: MatDialogRef<LoginModalComponent>,
-        private userService: UserService
+        private userService: UserService,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -34,6 +36,9 @@ export class LoginModalComponent implements OnInit {
             
             // Closing dialog and passing login status back to parent
             this.dialogRef.close({ loginStatus: this.loginStatus });
+
+            // Navigating to user-dashboard
+            this.router.navigate(['dashboard']);
         }
         else {
             this.invalidInputWarn = true;

@@ -12,8 +12,9 @@
     <mat-sidenav-content>
         <!--
         <app-notes-collection *ngIf="loggedIn"></app-notes-collection>
-        -->
-        <app-home-page *ngIf="!loggedIn"></app-home-page>
         <app-dashboard *ngIf="loggedIn" (titleEmitter)="setToolbarTitle($event)"></app-dashboard>
+        <app-home-page *ngIf="!loggedIn"></app-home-page>
+        -->
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

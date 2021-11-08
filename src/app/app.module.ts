@@ -22,6 +22,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { SignupModalComponent } from './signup-modal/signup-modal.component';
 import { GraphQLModule } from './graphql.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewProjectComponent } from './new-project/new-project-modal.component';
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         LoginModalComponent,
         SignupModalComponent,
         DashboardComponent,
+        NewProjectComponent,
     ],
     imports: [
         BrowserModule,

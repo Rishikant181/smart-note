@@ -1,11 +1,14 @@
 <div class="main-div">
-    <mat-card class="dash-card recent-card">
-        <mat-card-title>Recent Notes</mat-card-title>
-    </mat-card>
-    <mat-card class="dash-card active-card">
-        <mat-card-title>Active Projects</mat-card-title>
-    </mat-card>
-    <mat-card class="dash-card stats-card">
-        <mat-card-title>Activity</mat-card-title>
-    </mat-card>
+    <div class="dash-cards">
+        <mat-card class="dash-card recent-card">
+            <mat-card-title>Recent Notes</mat-card-title>
+        </mat-card>
+        <mat-card class="dash-card active-card">
+            <mat-card-title>Active Projects</mat-card-title>
+        </mat-card>
+        <mat-card class="dash-card stats-card">
+            <mat-card-title>Activity</mat-card-title>
+        </mat-card>
+    </div>
+    <button mat-fab id="new-project-button" color="primary" (click)="newProjectClick()"><mat-icon>add</mat-icon></button>
 </div>

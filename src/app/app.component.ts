@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { SignupModalComponent } from './signup-modal/signup-modal.component';
@@ -23,9 +24,15 @@ export class AppComponent {
     }
 
     // The constructor
-    constructor(public dialog: MatDialog) {
+    constructor(
+        public dialog: MatDialog,
+        private router: Router
+    ) {
         this.toolbarTitle = "Smart Notes";
         this.loggedIn = false;
+
+        // Opening homepage
+        this.router.navigate(['home']);
     }
 
     // Method to set toolbar title

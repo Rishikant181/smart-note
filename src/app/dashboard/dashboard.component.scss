@@ -16,7 +16,7 @@ mat-card-title {
     }
 }
 
-.main-div {
+.dash-cards {
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
@@ -67,4 +67,10 @@ mat-card-title {
         width: 31.33%;
         aspect-ratio: 1 / 1.35;
     }
+}
+
+#new-project-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }

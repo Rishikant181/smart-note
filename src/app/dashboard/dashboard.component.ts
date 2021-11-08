@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NewProjectComponent } from '../new-project/new-project-modal.component';
 
 @Component({
     selector: 'app-dashboard',
@@ -10,11 +12,18 @@ export class DashboardComponent implements OnInit {
 
     @Output() titleEmitter = new EventEmitter<String>();
 
-    constructor() { }
+    constructor(
+        public dialog: MatDialog
+    ) { }
 
     ngOnInit(): void {
         // Emit component name to parent
         this.titleEmitter.emit("My Dashboard");
+    }
+
+    // Method to handle clicking on new project button
+    newProjectClick(): void {
+        this.dialog.open(NewProjectComponent);
     }
 
 }
