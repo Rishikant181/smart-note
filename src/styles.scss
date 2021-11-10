@@ -12,7 +12,7 @@ body {
     margin: 0;
     height: 100%;
     font-family: "Urbanist", "Helvetica Neue", sans-serif;
-    background-color: white;
+    background-color: mat.get-color-from-palette($mat-background);
     font-size: 18px;
     font-weight: 300;
 }

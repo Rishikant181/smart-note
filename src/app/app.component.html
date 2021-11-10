@@ -14,7 +14,8 @@
         <app-notes-collection *ngIf="loggedIn"></app-notes-collection>
         <app-dashboard *ngIf="loggedIn" (titleEmitter)="setToolbarTitle($event)"></app-dashboard>
         <app-home-page *ngIf="!loggedIn"></app-home-page>
-        -->
         <router-outlet></router-outlet>
+        -->
+        <app-account-creation (titleEmitter)="setToolbarTitle($event)"></app-account-creation>
     </mat-sidenav-content>
 </mat-sidenav-container>

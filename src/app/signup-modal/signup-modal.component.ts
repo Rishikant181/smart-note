@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 import { UserService } from '../user.service';
 
@@ -16,6 +17,7 @@ export class SignupModalComponent implements OnInit {
 
     constructor(
         public dialogRef: MatDialogRef<SignupModalComponent>,
+        public router: Router,
         private userService: UserService
     ) {
         this.accAdded = false;
@@ -26,8 +28,7 @@ export class SignupModalComponent implements OnInit {
 
     // Method to handle clicking of create account button
     createAccountClick(): void {
-        this.accAdded = this.userService.validateCreds(this.email, this.pass);
-        console.log(this.accAdded);
+        this.router.navigate(['accounts/create'])
     }
 
     // Method to cancel signup and close dialog

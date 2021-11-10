@@ -1,0 +1,50 @@
+#account-details {
+    text-align: center;
+}
+
+#account-form-card-title {
+    margin: 5% 0 8% 0;
+}
+
+@media only screen and (max-width: 540px) {
+    #account-details {
+        margin: 5%;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    #account-details {
+        margin: 25% auto 0 auto;
+        width: 40%;
+        aspect-ratio: 1 / 1.25;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #account-details {
+        margin: 5% auto 0 auto;
+        width: 25%;
+        aspect-ratio: 1 / 1.25;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .name-field {
+        width: 90%;
+    }
+    
+    .pass-field {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .name-field {
+        width: 40%;
+        margin: 0% 5% 0% 5%;
+    }
+
+    .pass-field {
+        width: 90%;
+    }
+}
