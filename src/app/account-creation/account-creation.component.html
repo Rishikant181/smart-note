@@ -1,26 +1,31 @@
 <div class="main-div">
     <mat-card id="account-details">
         <mat-card-title id="account-form-card-title">Let's create your account!</mat-card-title>
-        <mat-form-field appearance="outline" class="name-field">
-            <mat-label>First Name</mat-label>
-            <input matInput [(ngModel)]="firstName" placeholder="Enter your first name">
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="name-field">
-            <mat-label>Last Name</mat-label>
-            <input matInput [(ngModel)]="lastName" placeholder="Enter your last name">
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="pass-field">
-            <mat-label>Email</mat-label>
-            <input matInput [(ngModel)]="email" placeholder="Enter your email">
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="pass-field">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="Enter a password(8-20 characters)">
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="pass-field">
-            <mat-label>Confirm Password</mat-label>
-            <input matInput type="password" [(ngModel)]="pass" placeholder="Re-enter you password">
-        </mat-form-field>
-        <button mat-flat-button color="primary" id="create-account-button" (click)="createButtonClick()">Create Account</button>
+        <form [formGroup]="accountForm" (ngSubmit)="submitClick()">
+            <mat-form-field appearance="outline" class="name-field">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Enter your first name" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="name-field">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Enter your last name" formControlName="lastName">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="pass-field">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="pass-field">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Enter a password(8-20 characters)" formControlName="newPass">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="pass-field">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" placeholder="Re-enter you password" formControlName="conPass">
+            </mat-form-field>
+            <button mat-flat-button color="primary" type="submit" id="create-account-button">Create Account</button>
+            <div class="validation-warnings">
+                
+            </div>
+        </form>
     </mat-card>
 </div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -44,6 +45,7 @@ import { AccountCreationComponent } from './account-creation/account-creation.co
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
         MatIconModule,
         MatToolbarModule,
         MatSidenavModule,
