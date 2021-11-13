@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { password } from '../validators/accounting';
 import { UserService } from '../user.service';
 
 @Component({
@@ -12,10 +13,10 @@ export class AccountCreationComponent implements OnInit {
 
     // Initializing form group
     accountForm = new FormGroup({
-        firstName: new FormControl(''),                                         // To store first name
-        lastName: new FormControl(''),                                          // To store last name
-        email: new FormControl('', Validators.email),                           // To store email
-        newPass: new FormControl(''),                                           // To store new password
+        firstName: new FormControl('', Validators.required),                    // To store first name
+        lastName: new FormControl('', Validators.required),                     // To store last name
+        email: new FormControl('', [Validators.email, Validators.required]),    // To store email
+        newPass: new FormControl('', [password(8, 20), Validators.required]),   // To store new password
         conPass: new FormControl(''),                                           // To store confirmation password
     });
 
@@ -38,7 +39,7 @@ export class AccountCreationComponent implements OnInit {
     /* Getter methods for returning individual form control */
     // For first name form control
     get firstName() {
-        return this.accountForm.get('firstName')
+        return this.accountForm.get('firstName');
     }    
 
     // For last name form control
