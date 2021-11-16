@@ -22,9 +22,13 @@
                 <mat-label>Confirm Password</mat-label>
                 <input matInput type="password" placeholder="Re-enter you password" formControlName="conPass">
             </mat-form-field>
-            <button mat-flat-button color="primary" type="submit" id="create-account-button">Create Account</button>
-            <div class="validation-warnings">
-                
+            <button mat-flat-button color="primary" type="submit" id="create-account-button" (click)="submitClick()">Create Account</button>
+            <div class="validation-errors">
+                <p *ngIf="firstName?.dirty && firstName?.errors?.['required']">Please enter first name!</p>
+                <p *ngIf="lastName?.dirty && lastName?.errors?.['required']">Please enter last name!</p>
+                <p *ngIf="email?.dirty && email?.errors?.['email']">Please enter a valid email!</p>
+                <p *ngIf="newPass?.dirty && newPass?.errors?.['required']">Please enter a valid password!</p>
+                <p *ngIf="conPass?.dirty && conPass?.errors?.['required']">Passwords do not match!</p>
             </div>
         </form>
     </mat-card>

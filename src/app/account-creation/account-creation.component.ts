@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { NewUserCreds } from '../models/user.models';
 import { password } from '../validators/accounting';
 import { UserService } from '../user.service';
 
@@ -65,6 +66,6 @@ export class AccountCreationComponent implements OnInit {
     /* DOM events */
     // Method to handle clicking of create account
     submitClick(): void {
-        this.userService.createAccount(this.accountForm.value.email, this.accountForm.value.newPass);
+        this.userService.createAccount(new NewUserCreds().deserialize(this.accountForm.value));
     }
 }

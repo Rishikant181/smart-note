@@ -1,3 +1,7 @@
+@use '~@angular/material' as mat;
+
+@import '/src/assets/theme.scss';
+
 #account-details {
     text-align: center;
 }
@@ -47,6 +51,10 @@
     .pass-field {
         width: 90%;
     }
+}
+
+.validation-errors {
+    color: mat.get-color-from-palette($mat-warn);
 }
 
 #create-account-button {

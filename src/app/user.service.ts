@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ResponseData } from './models/general.models';
+import { NewUserCreds } from './models/user.models';
 
 @Injectable({
     providedIn: 'root'
@@ -22,7 +23,7 @@ export class UserService {
     }
 
     // Method to validate creadentials and create an account
-    createAccount(email: string, pass: string): ResponseData {
+    createAccount(creds: NewUserCreds): ResponseData {
         var status = new ResponseData();
 
         status.success = true;
