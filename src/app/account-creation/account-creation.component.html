@@ -20,16 +20,19 @@
             </mat-form-field>
             <mat-form-field appearance="outline" class="pass-field">
                 <mat-label>Confirm Password</mat-label>
-                <input matInput type="password" placeholder="Re-enter you password" formControlName="conPass">
+                <input matInput type="password" placeholder="Re-enter you password" formControlName="conPass" (change)="conPassChange($event)">
             </mat-form-field>
             <button mat-flat-button color="primary" type="submit" id="create-account-button" (click)="submitClick()">Create Account</button>
-            <div class="validation-errors">
-                <p *ngIf="firstName?.dirty && firstName?.errors?.['required']">Please enter first name!</p>
-                <p *ngIf="lastName?.dirty && lastName?.errors?.['required']">Please enter last name!</p>
-                <p *ngIf="email?.dirty && email?.errors?.['email']">Please enter a valid email!</p>
-                <p *ngIf="newPass?.dirty && newPass?.errors?.['required']">Please enter a valid password!</p>
-                <p *ngIf="conPass?.dirty && conPass?.errors?.['required']">Passwords do not match!</p>
-            </div>
         </form>
+        <div class="validation-errors">
+            <!--
+            <p *ngIf="firstName?.dirty && firstName?.errors?.['required']">Please enter first name!</p>
+            <p *ngIf="lastName?.dirty && lastName?.errors?.['required']">Please enter last name!</p>
+            <p *ngIf="email?.dirty && email?.errors?.['email']">Please enter a valid email!</p>
+            <p *ngIf="newPass?.dirty && newPass?.errors?.['required']">Please enter a valid password!</p>
+            <p *ngIf="conPass?.dirty && conPass?.errors?.['required']">Passwords do not match!</p>
+            -->
+            <p>{{validationError}}</p>
+        </div>
     </mat-card>
 </div>

@@ -29,7 +29,7 @@ export class AccountCreationComponent implements OnInit {
     constructor(
         private userService: UserService
     ) {
-        this.validationError = '';
+        this.validationError = "";
     }
 
     // OnInit lifecycle hook
@@ -64,6 +64,14 @@ export class AccountCreationComponent implements OnInit {
     }
 
     /* DOM events */
+    // Method to validate newPass and conPass on password change
+    conPassChange(event: Event): void {
+        // Checking if password and confirmation password match
+        if((event.target as HTMLInputElement).value !== this.newPass?.value) {
+            this.validationError = "Confirmation password does not match!";
+        }
+    }
+    
     // Method to handle clicking of create account
     submitClick(): void {
         this.userService.createAccount(new NewUserCreds().deserialize(this.accountForm.value));
