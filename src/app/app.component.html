@@ -3,7 +3,7 @@
     <span class="toolbar-header">{{toolbarTitle}}</span>
     <span class="horizontal-spacer"></span>
     <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="showLoginDialog()">Login</button>
-    <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="showSignupDialog()">Signup</button>
+    <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="signupClick()">Signup</button>
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav #drawer mode="over" fixedInViewport="true" fixedTopGap="55" autoFocus="false">
@@ -13,9 +13,9 @@
         <!--
         <app-notes-collection *ngIf="loggedIn"></app-notes-collection>
         <app-dashboard *ngIf="loggedIn" (titleEmitter)="setToolbarTitle($event)"></app-dashboard>
-        <app-home-page *ngIf="!loggedIn"></app-home-page>
-        <router-outlet></router-outlet>
-        -->
         <app-account-creation (titleEmitter)="setToolbarTitle($event)"></app-account-creation>
+        <app-home-page *ngIf="!loggedIn"></app-home-page>
+        -->
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

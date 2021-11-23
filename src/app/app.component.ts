@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 import { LoginModalComponent } from './login-modal/login-modal.component';
-import { SignupModalComponent } from './signup-modal/signup-modal.component';
 
 @Component({
     selector: 'app-root',
@@ -50,8 +49,8 @@ export class AppComponent {
         });
     }
 
-    // Method to show signup modal
-    showSignupDialog(): void {
-        this.dialog.open(SignupModalComponent, { maxWidth: "100%" });
+    // Method to handle clicking of signup button
+    signupClick(): void {
+        this.router.navigate(['accounts/create']);
     }
 }

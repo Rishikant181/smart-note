@@ -20,7 +20,6 @@ import { NoteDetailsComponent } from './note-details/note-details.component';
 import { NewNoteComponent } from './new-note/new-note.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
-import { SignupModalComponent } from './signup-modal/signup-modal.component';
 import { GraphQLModule } from './graphql.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewProjectComponent } from './new-project/new-project-modal.component';
@@ -34,7 +33,6 @@ import { AccountCreationComponent } from './account-creation/account-creation.co
         NewNoteComponent,
         HomePageComponent,
         LoginModalComponent,
-        SignupModalComponent,
         DashboardComponent,
         NewProjectComponent,
         AccountCreationComponent,
