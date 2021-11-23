@@ -24,7 +24,9 @@ export class NewNoteComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    // Method to submit new note details to server
+    /* EVENTS */
+
+    // To submit new note details to server
     submitClick(): void {
         console.log(this.project.name);
     }

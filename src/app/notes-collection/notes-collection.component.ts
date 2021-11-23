@@ -26,7 +26,9 @@ export class NotesCollectionComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    // Method to show details of a note in a Dialog
+    /* EVENTS */
+
+    // To show details of a note in a Dialog
     noteCardClick(note: any): void {
         this.noteMeta = this.notesService.getNoteMeta(note.id);
         this.dialog.open(NoteDetailsComponent, {
@@ -35,7 +37,7 @@ export class NotesCollectionComponent implements OnInit {
         });
     }
 
-    // Method to show modal for addition of new note
+    // To show modal for addition of new note
     addNoteClick(project: string): void {
         this.dialog.open(NewNoteComponent, {
             data: {

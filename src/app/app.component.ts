@@ -9,9 +9,10 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
     title: string = 'smart-note';
-    toolbarTitle: string;                                              // To store text to be shown on toolbar title
+    private toolbarTitle: string;                                      // To store text to be shown on toolbar title
     loggedIn: boolean;                                                 // To store whether user is looged in or not
     
     // Init hook method to initialise windows height
@@ -34,10 +35,23 @@ export class AppComponent {
         this.router.navigate(['home']);
     }
 
-    // Method to set toolbar title
-    setToolbarTitle(title: String): void {
-        this.toolbarTitle = title.toString();
+    /* GETTER AND SETTERS */
+    
+    /* GETTERS */
+    
+    // Method to get current toolbar title
+    getToolbarTitle(): string {
+        return this.toolbarTitle;
     }
+
+    /* SETTERS */
+    
+    // Method to set toolbar title
+    setToolbarTitle(title: string): void {
+        this.toolbarTitle = title;
+    }
+
+    /* EVENTS */
 
     // Method to show login dialog
     showLoginDialog(): void {
@@ -52,5 +66,6 @@ export class AppComponent {
     // Method to handle clicking of signup button
     signupClick(): void {
         this.router.navigate(['accounts/create']);
+        this.setToolbarTitle('Create an account');
     }
 }

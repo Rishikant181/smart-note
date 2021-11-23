@@ -21,7 +21,9 @@ export class DashboardComponent implements OnInit {
         this.titleEmitter.emit("My Dashboard");
     }
 
-    // Method to handle clicking on new project button
+    /* EVENTS */
+
+    // To handle clicking on new project button
     newProjectClick(): void {
         this.dialog.open(NewProjectComponent);
     }

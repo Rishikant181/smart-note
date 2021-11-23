@@ -27,7 +27,9 @@ export class LoginModalComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    // Method to handle clicking of login button
+    /* EVENTS */
+
+    // To handle clicking of login button
     loginClick(): void {
         // Validating input
         if(this.email && this.pass) {
@@ -45,7 +47,7 @@ export class LoginModalComponent implements OnInit {
         }
     }
 
-    // Method to cancel login and close dialog
+    // To cancel login and close dialog
     cancelClick(): void {
         this.dialogRef.close();
     }

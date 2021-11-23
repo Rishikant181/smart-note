@@ -37,7 +37,8 @@ export class AccountCreationComponent implements OnInit {
         this.titleEmitter.emit("Create Account");
     }
 
-    /* Getter methods for returning individual form control */
+    /* GETTERS */
+
     // For first name form control
     get firstName() {
         return this.accountForm.get('firstName');
@@ -63,8 +64,9 @@ export class AccountCreationComponent implements OnInit {
         return this.accountForm.get('conPass');
     }
 
-    /* DOM events */
-    // Method to validate newPass and conPass on password change
+    /* EVENTS */
+
+    // To validate newPass and conPass on password change
     conPassChange(event: Event): void {
         // Checking if password and confirmation password match
         if((event.target as HTMLInputElement).value !== this.newPass?.value) {
@@ -72,7 +74,7 @@ export class AccountCreationComponent implements OnInit {
         }
     }
     
-    // Method to handle clicking of create account
+    // To handle clicking of create account
     submitClick(): void {
         this.userService.createAccount(new NewUserCreds().deserialize(this.accountForm.value));
     }

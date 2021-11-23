@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <button *ngIf="loggedIn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
-    <span class="toolbar-header">{{toolbarTitle}}</span>
+    <span class="toolbar-header">{{getToolbarTitle()}}</span>
     <span class="horizontal-spacer"></span>
     <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="showLoginDialog()">Login</button>
     <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="signupClick()">Signup</button>
