@@ -3,11 +3,11 @@
 import { Deserializable } from "./deserializable";
 
 // Object to hold success or failure response
-export class ResponseData implements Deserializable {
+export class Response implements Deserializable {
     // Member data
     success: boolean;                                                   // To store whether task was successful or not
     type: string;                                                       // To store failure reason
-    message: string;                                                    // To store the response message
+    details: string;                                                    // To store the response message
 
     // Member methods
     // Method to deserialize input data into response object

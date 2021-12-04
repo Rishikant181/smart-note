@@ -1,7 +1,7 @@
 <div class="main-div">
     <mat-card id="account-details">
         <mat-card-title id="account-form-card-title">Let's create your account!</mat-card-title>
-        <form [formGroup]="accountForm" (ngSubmit)="submitClick()">
+        <form [formGroup]="accountForm" (ngSubmit)="submitClick">
             <mat-form-field appearance="outline" class="name-field">
                 <mat-label>First Name</mat-label>
                 <input matInput placeholder="Enter your first name" formControlName="firstName">
@@ -22,7 +22,7 @@
                 <mat-label>Confirm Password</mat-label>
                 <input matInput type="password" placeholder="Re-enter you password" formControlName="conPass" (change)="conPassChange($event)">
             </mat-form-field>
-            <button mat-flat-button color="primary" type="submit" id="create-account-button" (click)="submitClick()">Create Account</button>
+            <button mat-flat-button color="primary" type="submit" id="create-account-button" (click)="submitClick">Create Account</button>
         </form>
         <div class="validation-errors">
             <!--

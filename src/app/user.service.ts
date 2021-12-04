@@ -1,8 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { ResponseData } from './models/general.models';
-import { NewUserCreds } from './models/user.models';
+import { environment } from 'src/environments/environment';
+import { Response } from './models/general.models';
+import {
+    UserSignupCredential,
+    UserCreds
+} from './models/user.models';
 
 @Injectable({
     providedIn: 'root'
@@ -10,11 +15,20 @@ import { NewUserCreds } from './models/user.models';
 
 export class UserService {
 
-    constructor() { }
+    constructor(private httpClient: HttpClient) { }
 
     // Method to handle login of user
-    verifyLoginCreds(email: string, pass: string): boolean {
-        return true;
+    verifyLoginCreds(creds: UserCreds): Observable<Response> {
+        // Creating query to send user creds in gql format
+        const query = `query {
+            login(email: "${creds.email}", pass: "${creds.pass}") {
+                success
+                type
+            }
+        }`;
+        
+        // Sending input credentials to backend and getting back response
+        return this.httpClient.post<Response>(environment.apiUrl + query, {});
     }
 
     // Method to validate credentials
@@ -23,12 +37,21 @@ export class UserService {
     }
 
     // Method to validate creadentials and create an account
-    createAccount(creds: NewUserCreds): ResponseData {
-        var status = new ResponseData();
+    createAccount(creds: UserSignupCredential): Observable<Response> {
+        // Creating query to send new credentials in gql format
+        const query = `mutation {
+            signup(
+                firstName: "${creds.firstName}",
+                lastName: "${creds.lastName}",
+                email: "${creds.email}",
+                pass: "${creds.newPass}"
+            ) {
+                success
+                type
+            }
+        }`;
 
-        status.success = true;
-        status.message = "Account created successfully";
-
-        return status;
+        // Sending new credentials to backend and getting back response
+        return this.httpClient.post<Response>(environment.apiUrl + query, {});
     }
 }
