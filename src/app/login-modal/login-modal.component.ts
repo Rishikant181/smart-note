@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
-import { UserCreds } from '../models/user.models'; 
+import { UserCredential } from '../models/user.models'; 
 import { UserService } from '../user.service';
 
 @Component({
@@ -37,7 +37,7 @@ export class LoginModalComponent implements OnInit {
             // Verify credentials
             // this.loginStatus = this.userService.verifyLoginCreds(new UserCreds().deserialize({ email: this.email, pass: this.pass }));
 
-            this.userService.verifyLoginCreds(new UserCreds().deserialize({ email: this.email, pass: this.pass }))
+            this.userService.verifyLoginCreds(new UserCredential().deserialize({ email: this.email, pass: this.pass }))
                 .subscribe((data) => console.log(data));
             
             // Closing dialog and passing login status back to parent

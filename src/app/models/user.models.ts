@@ -19,7 +19,7 @@ export class UserSignupCredential implements Deserializable {
 }
 
 // Object to hold user input credentials while logging in
-export class UserCreds implements Deserializable {
+export class UserCredential implements Deserializable {
     // Member data
     email: string;                                                          // To store input email
     pass: string;                                                           // To store input password

@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 import { Response } from './models/general.models';
 import {
     UserSignupCredential,
-    UserCreds
+    UserCredential
 } from './models/user.models';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class UserService {
     constructor(private httpClient: HttpClient) { }
 
     // Method to handle login of user
-    verifyLoginCreds(creds: UserCreds): Observable<Response> {
+    verifyLoginCreds(creds: UserCredential): Observable<Response> {
         // Creating query to send user creds in gql format
         const query = `query {
             login(email: "${creds.email}", pass: "${creds.pass}") {
@@ -31,10 +31,12 @@ export class UserService {
         return this.httpClient.post<Response>(environment.apiUrl + query, {});
     }
 
+    /*
     // Method to validate credentials
     validateCreds(email: string, pass: string): boolean {
         return true;
     }
+    */
 
     // Method to validate creadentials and create an account
     createAccount(creds: UserSignupCredential): Observable<Response> {
