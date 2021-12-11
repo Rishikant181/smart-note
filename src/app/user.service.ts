@@ -17,6 +17,11 @@ export class UserService {
 
     constructor(private httpClient: HttpClient) { }
 
+    // Method to login as guest
+    loginAsGuest(): Observable<Response> {
+        return this.httpClient.get<Response>(environment.apiUrl);
+    }
+
     // Method to handle login of user
     verifyLoginCreds(cred: UserCredential): Observable<Response> {
         // Creating query to send user creds in gql format
@@ -28,7 +33,7 @@ export class UserService {
         }`;
         
         // Sending input credentials to backend and getting back response
-        return this.httpClient.post<Response>(environment.apiUrl + query, {});
+        return this.httpClient.post<Response>(environment.apiUrl + "graphql?query=" + query, {});
     }
 
     /*
@@ -67,6 +72,6 @@ export class UserService {
         }`;
 
         // Sending new credentials to backend and getting back response
-        return this.httpClient.post<Response>(environment.apiUrl + query, {});
+        return this.httpClient.post<Response>(environment.apiUrl + "graphql?query=" + query, {});
     }
 }

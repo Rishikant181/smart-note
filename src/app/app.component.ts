@@ -1,7 +1,9 @@
+// External libs
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
+// Custom libs
 import { LoginModalComponent } from './login-modal/login-modal.component';
 
 @Component({

@@ -1,6 +1,16 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+// Angular libs
+import {
+    Component,
+    OnInit
+} from '@angular/core';
 
+import {
+    FormGroup,
+    FormControl,
+    Validators
+} from '@angular/forms';
+
+// Custom libs
 import { NewAccountDetails } from '../models/user.models';
 import { password } from '../validators/accounting';
 import { UserService } from '../user.service';
@@ -10,6 +20,7 @@ import { UserService } from '../user.service';
     templateUrl: './account-creation.component.html',
     styleUrls: ['./account-creation.component.scss']
 })
+
 export class AccountCreationComponent implements OnInit {
 
     // Initializing form group
@@ -23,8 +34,6 @@ export class AccountCreationComponent implements OnInit {
 
     validationError: string;                                                    // To store validation error message
     
-    @Output() titleEmitter = new EventEmitter<string>();                        // To emit component title
-
     // The constructor
     constructor(
         private userService: UserService
@@ -33,9 +42,7 @@ export class AccountCreationComponent implements OnInit {
     }
 
     // OnInit lifecycle hook
-    ngOnInit(): void {
-        this.titleEmitter.emit("Create Account");
-    }
+    ngOnInit(): void {}
 
     /* GETTERS */
 

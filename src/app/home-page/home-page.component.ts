@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+// External libs
+import {
+    Component,
+    OnInit
+} from '@angular/core';
 
 @Component({
     selector: 'app-home-page',
@@ -9,7 +13,6 @@ export class HomePageComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void {}
 
 }
