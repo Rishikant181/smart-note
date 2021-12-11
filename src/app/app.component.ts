@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 // Custom libs
 import { LoginModalComponent } from './login-modal/login-modal.component';
+import { UserService } from './user.service';
 
 @Component({
     selector: 'app-root',
@@ -15,7 +16,9 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 export class AppComponent {
     title: string = 'smart-note';
     private toolbarTitle: string;                                      // To store text to be shown on toolbar title
-    loggedIn: boolean;                                                 // To store whether user is looged in or not
+    userLoggedIn: boolean;                                             // To store whether user is looged in or not
+    guestLoggedIn: boolean;                                            // To store whether logged in as guest or not
+    authorizationToken: string;                                        // To store the authorization token
     
     // Init hook method to initialise windows height
     ngOnInit() {
@@ -28,10 +31,20 @@ export class AppComponent {
     // The constructor
     constructor(
         public dialog: MatDialog,
+        private userService: UserService,
         private router: Router
     ) {
         this.toolbarTitle = "Smart Notes";
-        this.loggedIn = false;
+        this.userLoggedIn = false;
+
+        // Logging in as guest
+        userService.loginAsGuest().subscribe((res) => {
+            this.guestLoggedIn = res.success;
+            
+            // Ignoring strict type checking for this line
+            // @ts-ignore
+            this.authorizationToken = res.data.authorizationToken;
+        });
 
         // Opening homepage
         this.router.navigate(['home']);
@@ -61,7 +74,7 @@ export class AppComponent {
 
         // Get login status after closing dialog
         dialogRef.afterClosed().subscribe(res => {
-            this.loggedIn = res;
+            this.userLoggedIn = res;
         });
     }
 

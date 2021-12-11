@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
-    <button *ngIf="loggedIn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <button *ngIf="userLoggedIn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
     <span class="toolbar-header">{{getToolbarTitle()}}</span>
     <span class="horizontal-spacer"></span>
-    <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="showLoginDialog()">Login</button>
-    <button *ngIf="!loggedIn" mat-flat-button color="accent" (click)="signupClick()">Signup</button>
+    <button *ngIf="!userLoggedIn" mat-flat-button color="accent" (click)="showLoginDialog()">Login</button>
+    <button *ngIf="!userLoggedIn" mat-flat-button color="accent" (click)="signupClick()">Signup</button>
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav #drawer mode="over" fixedInViewport="true" fixedTopGap="55" autoFocus="false">
@@ -11,10 +11,10 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <!--
-        <app-notes-collection *ngIf="loggedIn"></app-notes-collection>
-        <app-dashboard *ngIf="loggedIn" (titleEmitter)="setToolbarTitle($event)"></app-dashboard>
+        <app-notes-collection *ngIf="userLoggedIn"></app-notes-collection>
+        <app-dashboard *ngIf="userLoggedIn" (titleEmitter)="setToolbarTitle($event)"></app-dashboard>
         <app-account-creation (titleEmitter)="setToolbarTitle($event)"></app-account-creation>
-        <app-home-page *ngIf="!loggedIn"></app-home-page>
+        <app-home-page *ngIf="!userLoggedIn"></app-home-page>
         -->
         <router-outlet></router-outlet>
     </mat-sidenav-content>
