@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Response } from './models/general.models';
 import {
-    UserSignupCredential,
+    NewAccountDetails,
     UserCredential
 } from './models/user.models';
 
@@ -18,10 +18,10 @@ export class UserService {
     constructor(private httpClient: HttpClient) { }
 
     // Method to handle login of user
-    verifyLoginCreds(creds: UserCredential): Observable<Response> {
+    verifyLoginCreds(cred: UserCredential): Observable<Response> {
         // Creating query to send user creds in gql format
         const query = `query {
-            login(email: "${creds.email}", pass: "${creds.pass}") {
+            login(email: "${cred.email}", pass: "${cred.pass}") {
                 success
                 type
             }
@@ -39,17 +39,30 @@ export class UserService {
     */
 
     // Method to validate creadentials and create an account
-    createAccount(creds: UserSignupCredential): Observable<Response> {
+    createAccount(cred: NewAccountDetails): Observable<Response> {
         // Creating query to send new credentials in gql format
         const query = `mutation {
             signup(
-                firstName: "${creds.firstName}",
-                lastName: "${creds.lastName}",
-                email: "${creds.email}",
-                pass: "${creds.newPass}"
+                cred: {
+                    email: "${cred.email}",
+                    pass: "${cred.newPass}",
+                }
             ) {
                 success
                 type
+            }
+
+            updateDetails(
+                email: "${cred.email}",
+                details: {
+                    firstName: "${cred.firstName}",
+                    lastName: "${cred.lastName}",
+                    phone: 0,
+                }
+            ) {
+                success
+                type
+                data
             }
         }`;
 

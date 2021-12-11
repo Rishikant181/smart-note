@@ -22,7 +22,7 @@
                 <mat-label>Confirm Password</mat-label>
                 <input matInput type="password" placeholder="Re-enter you password" formControlName="conPass" (change)="conPassChange($event)">
             </mat-form-field>
-            <button mat-flat-button color="primary" type="submit" id="create-account-button" (click)="submitClick">Create Account</button>
+            <button mat-flat-button color="primary" type="submit" id="create-account-button" (click)="submitClick()">Create Account</button>
         </form>
         <div class="validation-errors">
             <!--
