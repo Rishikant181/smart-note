@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GlobalDataService } from './global-data.service';
+import { GlobalDataService } from './data-store.service';
 
 describe('GlobalDataService', () => {
   let service: GlobalDataService;
