@@ -38,10 +38,12 @@ export class LoginModalComponent implements OnInit {
             // this.loginStatus = this.userService.verifyLoginCreds(new UserCreds().deserialize({ email: this.email, pass: this.pass }));
 
             this.userService.verifyLoginCreds(new UserCredential().deserialize({ email: this.email, pass: this.pass }))
-                .subscribe((data) => console.log(data));
+                .subscribe((res) => {
+                    console.log(res);
+                });
             
             // Closing dialog and passing login status back to parent
-            this.dialogRef.close({ loginStatus: this.loginStatus });
+            // this.dialogRef.close({ loginStatus: this.loginStatus });
 
             // Navigating to user-dashboard
             this.router.navigate(['dashboard']);

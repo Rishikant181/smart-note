@@ -24,6 +24,7 @@ import { GraphQLModule } from './graphql.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewProjectComponent } from './new-project/new-project-modal.component';
 import { AccountCreationComponent } from './account-creation/account-creation.component';
+import { DataStoreService } from './data-store.service';
 
 @NgModule({
     declarations: [
