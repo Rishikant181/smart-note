@@ -8,7 +8,7 @@ export class Response implements Deserializable {
     success: boolean;                                                   // To store whether task was successful or not
     type: string;                                                       // To store failure reason
     details: string;                                                    // To store the response message
-    data: object;                                                       // To store any data returned
+    data: Response;                                                     // To store any data returned
 
     // Member methods
     // Method to deserialize input data into response object
