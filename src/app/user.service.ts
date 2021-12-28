@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 // Custom libs
 import { environment } from 'src/environments/environment';
 import { DataStoreService } from './data-store.service';
-import { Response } from './models/general.models';
 import {
     NewAccountDetails,
     UserCredential
@@ -28,12 +27,12 @@ export class UserService {
     ) { }
 
     // Method to login as guest
-    loginAsGuest(): Observable<Response> {
-        return this.httpClient.get<Response>(environment.apiUrl);
+    loginAsGuest(): Observable<any> {
+        return this.httpClient.get<any>(environment.apiUrl);
     }
 
     // Method to handle login of user
-    verifyLoginCreds(cred: UserCredential): Observable<Response> {
+    verifyLoginCreds(cred: UserCredential): Observable<any> {
         // Setting the options for http request
         const options = {
             headers: new HttpHeaders({
@@ -46,11 +45,11 @@ export class UserService {
         const query = verifyLoginCredsQuery(cred);
         
         // Sending input credentials to backend and getting back response
-        return this.httpClient.post<Response>(environment.apiUrl + "graphql?query=" + query, {}, options);
+        return this.httpClient.post<any>(environment.apiUrl + "graphql?query=" + query, {}, options);
     }
 
     // Method to validate creadentials and create an account
-    createAccount(cred: NewAccountDetails): Observable<Response> {
+    createAccount(cred: NewAccountDetails): Observable<any> {
         // Setting the options for http request
         const options = {
             headers: new HttpHeaders({
@@ -63,6 +62,6 @@ export class UserService {
         const query = createAccountQuery(cred);
 
         // Sending new credentials to backend and getting back response
-        return this.httpClient.post<Response>(environment.apiUrl + "graphql?query=" + query, {}, options);
+        return this.httpClient.post<any>(environment.apiUrl + "graphql?query=" + query, {}, options);
     }
 }

@@ -84,6 +84,6 @@ export class AccountCreationComponent implements OnInit {
     // To handle clicking of create account
     submitClick(): void {
         this.userService.createAccount(new NewAccountDetails().deserialize(this.accountForm.value))
-            .subscribe((data) => console.log(data));
+            .subscribe((res) => console.log(res.data.signup));
     }
 }

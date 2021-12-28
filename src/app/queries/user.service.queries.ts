@@ -26,24 +26,16 @@ export function verifyLoginCredsQuery(cred: UserCredential) {
 /* MUTATIONS */
 
 // Query for creating a new account
-export function createAccountQuery(details: NewAccountDetails) {
+export function createAccountQuery(data: NewAccountDetails) {
     return `mutation {
         signup(
             cred: {
-                email: "${details.email}",
-                pass: "${details.newPass}"
-            }
-        ) {
-            success
-            type
-        }
-    
-        updateDetails(
-            email: "${details.email}",
+                email: "${data.email}",
+                pass: "${data.newPass}"
+            },
             details: {
-                firstName: "${details.firstName}",
-                lastName: "${details.lastName}",
-                phone: 0
+                firstName: "${data.firstName}",
+                lastName: "${data.lastName}"
             }
         ) {
             success
