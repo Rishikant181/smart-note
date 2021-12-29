@@ -14,6 +14,7 @@ import {
 import { NewAccountDetails } from '../models/user.models';
 import { password } from '../validators/accounting';
 import { UserService } from '../user.service';
+import { DataStoreService } from '../data-store.service';
 
 @Component({
     selector: 'app-account-creation',
@@ -36,7 +37,8 @@ export class AccountCreationComponent implements OnInit {
     
     // The constructor
     constructor(
-        private userService: UserService
+        private userService: UserService,
+        public dataStoreService: DataStoreService
     ) {
         this.validationError = "";
     }
@@ -84,6 +86,15 @@ export class AccountCreationComponent implements OnInit {
     // To handle clicking of create account
     submitClick(): void {
         this.userService.createAccount(new NewAccountDetails().deserialize(this.accountForm.value))
-            .subscribe((res) => console.log(res.data.signup));
+            .subscribe((res) => {
+                // Checking if account created successfully
+                if(res.data.signup.success) {
+                    // Setting authorization token and login status
+                    this.dataStoreService.authorizationToken = res.data.signup.data.authToken;
+
+                    // Setting login status
+                    this.dataStoreService.userLoggedIn = true;
+                }
+            });
     }
 }
