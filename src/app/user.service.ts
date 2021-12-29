@@ -14,6 +14,9 @@ import {
     createAccountQuery,
     verifyLoginCredsQuery
 } from './queries/user.service.queries';
+import {
+    hashCredential
+} from '../app/helper/auth';
 
 @Injectable({
     providedIn: 'root'
@@ -57,6 +60,9 @@ export class UserService {
                 'Authorization': `Bearer ${this.dataStoreService.authorizationToken}`
             })
         };
+
+        // Hashing input credentials
+        cred.newPass = hashCredential(cred.newPass);
         
         // Creating query to send new credentials in gql format
         const query = createAccountQuery(cred);
