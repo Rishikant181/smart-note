@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { APOLLO_OPTIONS } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+import { InMemoryCache } from '@apollo/client/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon'
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,6 +28,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewProjectComponent } from './new-project/new-project-modal.component';
 import { AccountCreationComponent } from './account-creation/account-creation.component';
 import { DataStoreService } from './data-store.service';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -55,7 +60,21 @@ import { DataStoreService } from './data-store.service';
         MatFormFieldModule,
         GraphQLModule,
     ],
-    providers: [],
+    providers: [
+        {
+            // Connecting to graphql server
+            provide: APOLLO_OPTIONS,
+            useFactory: (httpLink: HttpLink) => {
+                return {
+                    cache: new InMemoryCache(),
+                    link: httpLink.create({
+                        uri: environment.apiUrl + 'graphql/',
+                    })
+                }
+            },
+            deps: [HttpLink]
+        }
+    ],
     bootstrap: [AppComponent]
 })
 
