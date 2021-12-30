@@ -1,6 +1,7 @@
 // External libs
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
 
 // Custom libs
@@ -26,7 +27,8 @@ export class UserService {
 
     constructor(
         private httpClient: HttpClient,
-        private dataStoreService: DataStoreService
+        private dataStoreService: DataStoreService,
+        private apolloClient: Apollo
     ) { }
 
     // Method to login as guest
@@ -47,11 +49,11 @@ export class UserService {
         // Hashing password
         cred.pass = hashCredential(cred.pass);
 
-        // Creating query to send user creds in gql format
-        const query = loginUserQuery(cred);
-        
         // Sending input credentials to backend and getting back response
-        return this.httpClient.post<any>(environment.apiUrl + "graphql?query=" + query, {}, options);
+        return this.apolloClient.query({
+            query: loginUserQuery(cred),
+            context: options
+        });
     }
 
     // Method to validate creadentials and create an account
@@ -67,10 +69,10 @@ export class UserService {
         // Hashing input credentials
         cred.newPass = hashCredential(cred.newPass);
         
-        // Creating query to send new credentials in gql format
-        const query = createAccountQuery(cred);
-
         // Sending new credentials to backend and getting back response
-        return this.httpClient.post<any>(environment.apiUrl + "graphql?query=" + query, {}, options);
+        return this.apolloClient.mutate({
+            mutation: createAccountQuery(cred),
+            context: options
+        });
     }
 }
