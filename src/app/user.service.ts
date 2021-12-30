@@ -12,7 +12,7 @@ import {
 } from './models/user.models';
 import {
     createAccountQuery,
-    verifyLoginCredsQuery
+    loginUserQuery
 } from './queries/user.service.queries';
 import {
     hashCredential
@@ -35,7 +35,7 @@ export class UserService {
     }
 
     // Method to handle login of user
-    verifyLoginCreds(cred: UserCredential): Observable<any> {
+    loginUser(cred: UserCredential): Observable<any> {
         // Setting the options for http request
         const options = {
             headers: new HttpHeaders({
@@ -44,8 +44,11 @@ export class UserService {
             })
         }
         
+        // Hashing password
+        cred.pass = hashCredential(cred.pass);
+
         // Creating query to send user creds in gql format
-        const query = verifyLoginCredsQuery(cred);
+        const query = loginUserQuery(cred);
         
         // Sending input credentials to backend and getting back response
         return this.httpClient.post<any>(environment.apiUrl + "graphql?query=" + query, {}, options);

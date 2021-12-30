@@ -35,16 +35,12 @@ export class LoginModalComponent implements OnInit {
         // Validating input
         if(this.email && this.pass) {
             // Verify credentials
-            // this.loginStatus = this.userService.verifyLoginCreds(new UserCreds().deserialize({ email: this.email, pass: this.pass }));
-
-            this.userService.verifyLoginCreds(new UserCredential().deserialize({ email: this.email, pass: this.pass }))
+            this.userService.loginUser(new UserCredential().deserialize({ email: this.email, pass: this.pass }))
                 .subscribe((res) => {
                     console.log(res);
                 });
             
-            // Closing dialog and passing login status back to parent
-            // this.dialogRef.close({ loginStatus: this.loginStatus });
-
+            
             // Navigating to user-dashboard
             this.router.navigate(['dashboard']);
         }

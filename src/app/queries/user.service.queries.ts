@@ -8,7 +8,7 @@ import {
 /* QUERIES */
 
 // Query for verifying login credentials
-export function verifyLoginCredsQuery(cred: UserCredential) {
+export function loginUserQuery(cred: UserCredential) {
     return `query {
         login(
             cred: {
