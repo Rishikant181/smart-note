@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
+import { DataStoreService } from 'src/app/data-store.service';
 import { UserCredential } from 'src/app/models/user.models'; 
 import { UserService } from 'src/app/user.service';
 
@@ -22,7 +23,8 @@ export class LoginModalComponent implements OnInit {
     constructor( 
         public dialogRef: MatDialogRef<LoginModalComponent>,
         private userService: UserService,
-        private router: Router
+        private router: Router,
+        private dataStoreService: DataStoreService
     ) { }
 
     ngOnInit(): void {
@@ -38,11 +40,16 @@ export class LoginModalComponent implements OnInit {
             this.userService.loginUser(new UserCredential().deserialize({ email: this.email, pass: this.pass }))
                 .subscribe((res) => {
                     console.log(res);
+                    // Evaluating response
+                    // If logged in
+                    if(res.data.login.success) {
+                        this.dataStoreService.userLoggedIn = true;
+                        this.dataStoreService.authorizationToken = res.data.login.data.authorizationToken;
+
+                        // Navigating to user-dashboard
+                        this.router.navigate(['dashboard']);
+                    }
                 });
-            
-            
-            // Navigating to user-dashboard
-            this.router.navigate(['dashboard']);
         }
         else {
             this.invalidInputWarn = true;
