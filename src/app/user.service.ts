@@ -6,18 +6,18 @@ import { Observable } from 'rxjs';
 
 // Custom libs
 import { environment } from 'src/environments/environment';
-import { DataStoreService } from './data-store.service';
+import { DataStoreService } from 'src/app/data-store.service';
 import {
     NewAccountDetails,
     UserCredential
-} from './models/user.models';
+} from 'src/app/models/user.models';
 import {
     createAccountQuery,
     loginUserQuery
-} from './queries/user.service.queries';
+} from 'src/app/queries/user.service.queries';
 import {
     hashCredential
-} from '../app/helper/auth';
+} from 'src/app/helper/auth';
 
 @Injectable({
     providedIn: 'root'

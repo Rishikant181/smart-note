@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { ProjectMeta } from '../../models/notes.model';
+import { ProjectMeta } from 'src/app/models/notes.model';
 
 @Component({
     selector: 'app-new-note',

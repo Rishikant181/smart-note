@@ -1,10 +1,10 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { NotesService } from '../../notes.service';
-import { NoteList, NoteMeta } from '../../models/notes.model';
-import { NoteDetailsComponent } from '../note-details/note-details.component';
-import { NewNoteComponent } from '../new-note/new-note.component';
+import { NotesService } from 'src/app/notes.service';
+import { NoteList, NoteMeta } from 'src/app/models/notes.model';
+import { NoteDetailsComponent } from 'src/app/notes/note-details/note-details.component';
+import { NewNoteComponent } from 'src/app/notes/new-note/new-note.component';
 
 @Component({
     selector: 'app-notes-collection',

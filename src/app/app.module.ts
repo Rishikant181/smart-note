@@ -15,21 +15,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NotesCollectionComponent } from './notes/notes-collection/notes-collection.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { AppComponent } from 'src/app/app.component';
+import { NotesCollectionComponent } from 'src/app/notes/notes-collection/notes-collection.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoteDetailsComponent } from './notes/note-details/note-details.component';
-import { NewNoteComponent } from './notes/new-note/new-note.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { LoginModalComponent } from './accounts/login-modal/login-modal.component';
-import { GraphQLModule } from './graphql.module';
-import { DashboardComponent } from './accounts/dashboard/dashboard.component';
-import { NewProjectComponent } from './notes/new-project/new-project-modal.component';
-import { AccountCreationComponent } from './accounts/account-creation/account-creation.component';
-import { DataStoreService } from './data-store.service';
+import { NoteDetailsComponent } from 'src/app/notes/note-details/note-details.component';
+import { NewNoteComponent } from 'src/app/notes/new-note/new-note.component';
+import { HomePageComponent } from 'src/app/home-page/home-page.component';
+import { LoginModalComponent } from 'src/app/accounts/login-modal/login-modal.component';
+import { GraphQLModule } from 'src/app/graphql.module';
+import { DashboardComponent } from 'src/app/accounts/dashboard/dashboard.component';
+import { NewProjectComponent } from 'src/app/notes/new-project/new-project-modal.component';
+import { AccountCreationComponent } from 'src/app/accounts/account-creation/account-creation.component';
+import { DataStoreService } from 'src/app/data-store.service';
 
-import { environment } from '../environments/environment';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
     declarations: [

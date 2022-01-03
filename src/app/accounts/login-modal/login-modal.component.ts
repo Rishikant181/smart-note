@@ -2,8 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
-import { UserCredential } from '../../models/user.models'; 
-import { UserService } from '../../user.service';
+import { UserCredential } from 'src/app/models/user.models'; 
+import { UserService } from 'src/app/user.service';
 
 @Component({
     selector: 'app-login-modal',

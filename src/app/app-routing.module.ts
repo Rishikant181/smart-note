@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccountCreationComponent } from './accounts/account-creation/account-creation.component';
 
-import { AuthGuard } from './guards/auth/auth.guard';
-import { DashboardComponent } from './accounts/dashboard/dashboard.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { AuthGuard } from 'src/app/guards/auth/auth.guard';
+import { DashboardComponent } from 'src/app/accounts/dashboard/dashboard.component';
+import { HomePageComponent } from 'src/app/home-page/home-page.component';
+import { AccountCreationComponent } from 'src/app/accounts/account-creation/account-creation.component';
 
 // Adding route links
 const routes: Routes = [
