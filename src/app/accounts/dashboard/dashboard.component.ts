@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NewProjectComponent } from '../new-project/new-project-modal.component';
+import { NewProjectComponent } from '../../notes/new-project/new-project-modal.component';
 
 @Component({
     selector: 'app-dashboard',

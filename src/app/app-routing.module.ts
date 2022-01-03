@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccountCreationComponent } from './account-creation/account-creation.component';
+import { AccountCreationComponent } from './accounts/account-creation/account-creation.component';
 
 import { AuthGuard } from './guards/auth/auth.guard';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './accounts/dashboard/dashboard.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 // Adding route links

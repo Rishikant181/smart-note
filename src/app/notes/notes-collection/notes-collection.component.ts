@@ -1,8 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { NotesService } from '../notes.service';
-import { NoteList, NoteMeta } from '../models/notes.model';
+import { NotesService } from '../../notes.service';
+import { NoteList, NoteMeta } from '../../models/notes.model';
 import { NoteDetailsComponent } from '../note-details/note-details.component';
 import { NewNoteComponent } from '../new-note/new-note.component';
 

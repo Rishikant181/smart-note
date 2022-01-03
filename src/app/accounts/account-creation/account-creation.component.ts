@@ -11,10 +11,10 @@ import {
 } from '@angular/forms';
 
 // Custom libs
-import { NewAccountDetails } from '../models/user.models';
-import { password } from '../validators/accounting';
-import { UserService } from '../user.service';
-import { DataStoreService } from '../data-store.service';
+import { NewAccountDetails } from '../../models/user.models';
+import { password } from '../../validators/accounting';
+import { UserService } from '../../user.service';
+import { DataStoreService } from '../../data-store.service';
 
 @Component({
     selector: 'app-account-creation',

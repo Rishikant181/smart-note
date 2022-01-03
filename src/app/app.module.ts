@@ -17,16 +17,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NotesCollectionComponent } from './notes-collection/notes-collection.component';
+import { NotesCollectionComponent } from './notes/notes-collection/notes-collection.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoteDetailsComponent } from './note-details/note-details.component';
-import { NewNoteComponent } from './new-note/new-note.component';
+import { NoteDetailsComponent } from './notes/note-details/note-details.component';
+import { NewNoteComponent } from './notes/new-note/new-note.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { LoginModalComponent } from './login-modal/login-modal.component';
+import { LoginModalComponent } from './accounts/login-modal/login-modal.component';
 import { GraphQLModule } from './graphql.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NewProjectComponent } from './new-project/new-project-modal.component';
-import { AccountCreationComponent } from './account-creation/account-creation.component';
+import { DashboardComponent } from './accounts/dashboard/dashboard.component';
+import { NewProjectComponent } from './notes/new-project/new-project-modal.component';
+import { AccountCreationComponent } from './accounts/account-creation/account-creation.component';
 import { DataStoreService } from './data-store.service';
 
 import { environment } from '../environments/environment';

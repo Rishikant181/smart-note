@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 // Custom libs
-import { LoginModalComponent } from './login-modal/login-modal.component';
+import { LoginModalComponent } from './accounts/login-modal/login-modal.component';
 import { UserService } from './user.service';
 import { DataStoreService } from './data-store.service';
 
