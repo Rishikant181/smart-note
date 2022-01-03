@@ -48,6 +48,9 @@ export class LoginModalComponent implements OnInit {
 
                         // Navigating to user-dashboard
                         this.router.navigate(['dashboard']);
+
+                        // Closing this modal
+                        this.dialogRef.close();
                     }
                 });
         }
