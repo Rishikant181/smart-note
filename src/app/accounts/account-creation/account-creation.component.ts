@@ -13,8 +13,8 @@ import {
 // Custom libs
 import { NewAccountDetails } from 'src/app/models/user.models';
 import { password } from 'src/app/validators/accounting';
-import { UserService } from 'src/app/user.service';
-import { DataStoreService } from 'src/app/data-store.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { DataStoreService } from 'src/app/services/data-store/data-store.service';
 
 @Component({
     selector: 'app-account-creation',

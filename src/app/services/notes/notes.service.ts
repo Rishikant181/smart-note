@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { data } from './notes.service.data';
-import { NoteList, NoteMeta } from '../app/models/notes.model';
+import { NoteList, NoteMeta } from 'src/app/models/notes.model';
 
 @Injectable({
     providedIn: 'root'

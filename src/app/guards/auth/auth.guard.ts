@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { DataStoreService } from 'src/app/data-store.service';
+import { DataStoreService } from 'src/app/services/data-store/data-store.service';
 
 @Injectable({
     providedIn: 'root'

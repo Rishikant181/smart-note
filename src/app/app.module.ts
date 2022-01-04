@@ -27,7 +27,7 @@ import { GraphQLModule } from 'src/app/graphql.module';
 import { DashboardComponent } from 'src/app/accounts/dashboard/dashboard.component';
 import { NewProjectComponent } from 'src/app/notes/new-project/new-project-modal.component';
 import { AccountCreationComponent } from 'src/app/accounts/account-creation/account-creation.component';
-import { DataStoreService } from 'src/app/data-store.service';
+import { DataStoreService } from 'src/app/services/data-store/data-store.service';
 
 import { environment } from 'src/environments/environment';
 

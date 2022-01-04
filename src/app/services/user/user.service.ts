@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 // Custom libs
 import { environment } from 'src/environments/environment';
-import { DataStoreService } from 'src/app/data-store.service';
+import { DataStoreService } from 'src/app/services/data-store/data-store.service';
 import {
     NewAccountDetails,
     UserCredential
