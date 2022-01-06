@@ -11,6 +11,7 @@ import {
 } from '@angular/forms';
 
 // Custom libs
+import { Response } from 'src/app/models/http';
 import { NewAccountDetails } from 'src/app/models/user.models';
 import { password } from 'src/app/validators/accounting';
 import { UserService } from 'src/app/services/user/user.service';
@@ -86,11 +87,14 @@ export class AccountCreationComponent implements OnInit {
     // To handle clicking of create account
     submitClick(): void {
         this.userService.createAccount(new NewAccountDetails().deserialize(this.accountForm.value))
-            .subscribe((res) => {
+            .subscribe((rawRes) => {
+                // Parsing raw response to a Response object
+                const res = new Response().deserialize(rawRes.data.signup);
+                
                 // Checking if account created successfully
-                if(res.data.signup.success) {
+                if(res.success) {
                     // Setting authorization token and login status
-                    this.dataStoreService.authorizationToken = res.data.signup.data.authToken;
+                    this.dataStoreService.authorizationToken = res.data.authToken;
 
                     // Setting login status
                     this.dataStoreService.userLoggedIn = true;
