@@ -59,6 +59,5 @@ export class AppComponent {
     // Method to handle clicking of signup button
     signupClick(): void {
         this.router.navigate(['accounts/create']);
-        this.dataStoreService.activeComponent = 'Create an account';
     }
 }

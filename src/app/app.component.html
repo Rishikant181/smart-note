@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
-    <button *ngIf="dataStoreService.userLoggedIn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
-    <span class="toolbar-header">{{dataStoreService.activeComponent}}</span>
+    <button *ngIf="this.dataStoreService.userLoggedIn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <span class="toolbar-header">Smart Notes</span>
     <span class="horizontal-spacer"></span>
-    <button *ngIf="!dataStoreService.userLoggedIn" mat-flat-button color="accent" (click)="showLoginDialog()">Login</button>
-    <button *ngIf="!dataStoreService.userLoggedIn" mat-flat-button color="accent" (click)="signupClick()">Signup</button>
+    <button *ngIf="!this.dataStoreService.userLoggedIn" mat-flat-button color="accent" (click)="showLoginDialog()">Login</button>
+    <button *ngIf="!this.dataStoreService.userLoggedIn" mat-flat-button color="accent" (click)="signupClick()">Signup</button>
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav #drawer mode="over" fixedInViewport="true" fixedTopGap="55" autoFocus="false">
