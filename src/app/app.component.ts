@@ -51,12 +51,7 @@ export class AppComponent {
 
     // Method to show login dialog
     showLoginDialog(): void {
-        const dialogRef = this.dialog.open(LoginModalComponent, { maxWidth: "100%" });
-
-        // Get login status after closing dialog
-        dialogRef.afterClosed().subscribe(res => {
-            this.dataStoreService.userLoggedIn = res;
-        });
+        this.dialog.open(LoginModalComponent, { maxWidth: "100%" });
     }
 
     // Method to handle clicking of signup button

@@ -10,6 +10,8 @@ import {
     Validators
 } from '@angular/forms';
 
+import { Router } from '@angular/router';
+
 // Custom libs
 import { Response } from 'src/app/models/http';
 import { NewAccountDetails } from 'src/app/models/user.models';
@@ -39,7 +41,8 @@ export class AccountCreationComponent implements OnInit {
     // The constructor
     constructor(
         private userService: UserService,
-        public dataStoreService: DataStoreService
+        public dataStoreService: DataStoreService,
+        private router: Router
     ) {
         this.validationError = "";
     }
@@ -93,11 +96,12 @@ export class AccountCreationComponent implements OnInit {
                 
                 // Checking if account created successfully
                 if(res.success) {
-                    // Setting authorization token and login status
-                    this.dataStoreService.authorizationToken = res.data.authToken;
-
-                    // Setting login status
+                    // Setting login and authorization status in global data store
+                    this.dataStoreService.authorizationToken = res.data.authToken;// Setting login status
                     this.dataStoreService.userLoggedIn = true;
+
+                    // Navigating to user-dashboard
+                    this.router.navigate(['dashboard']);
                 }
             });
     }

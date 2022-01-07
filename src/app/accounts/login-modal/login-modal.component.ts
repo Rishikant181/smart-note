@@ -25,7 +25,7 @@ export class LoginModalComponent implements OnInit {
         public dialogRef: MatDialogRef<LoginModalComponent>,
         private userService: UserService,
         private router: Router,
-        private dataStoreService: DataStoreService
+        public dataStoreService: DataStoreService
     ) { }
 
     ngOnInit(): void {
@@ -47,6 +47,7 @@ export class LoginModalComponent implements OnInit {
                     // Evaluating response
                     // If logged in
                     if(res.success) {
+                        // Setting login and authorization status in global data store
                         this.dataStoreService.userLoggedIn = true;
                         this.dataStoreService.authorizationToken = res.data.authorizationToken;
 
