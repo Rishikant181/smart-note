@@ -17,6 +17,7 @@ import { DataStoreService } from 'src/app/services/data-store/data-store.service
 export class AppComponent {
     // Init hook method to initialise windows height
     ngOnInit() {
+        // This one should stay commented out until it's absolute necessary
         /*
         const viewHeight = window.innerHeight;
         const viewWidth = window.innerWidth;
@@ -33,7 +34,7 @@ export class AppComponent {
         private router: Router
     ) {
         // Logging in as guest
-        userService.loginAsGuest().subscribe((res) => {
+        this.userService.loginAsGuest().subscribe((res) => {
             // Setting guest login status to true
             dataStoreService.guestLoggedIn = res.success;
             
