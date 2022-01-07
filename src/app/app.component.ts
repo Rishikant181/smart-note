@@ -17,10 +17,12 @@ import { DataStoreService } from 'src/app/services/data-store/data-store.service
 export class AppComponent {
     // Init hook method to initialise windows height
     ngOnInit() {
+        /*
         const viewHeight = window.innerHeight;
         const viewWidth = window.innerWidth;
         const viewport = document.querySelector("meta[name=viewport]");
         viewport?.setAttribute("content", "height=" + viewHeight + "px, width=" + viewWidth + "px, initial-scale=1.0");
+        */
     }
 
     // The constructor
