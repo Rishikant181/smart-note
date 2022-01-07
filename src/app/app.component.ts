@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 // Custom libs
+import { Response } from './models/http';
 import { LoginModalComponent } from 'src/app/accounts/login-modal/login-modal.component';
 import { UserService } from 'src/app/services/user/user.service';
 import { DataStoreService } from 'src/app/services/data-store/data-store.service';
@@ -34,12 +35,14 @@ export class AppComponent {
         private router: Router
     ) {
         // Logging in as guest
-        this.userService.loginAsGuest().subscribe((res) => {
+        this.userService.loginAsGuest().subscribe((rawRes) => {
+            // Parsing raw response to a Response object
+            const res = new Response().deserialize(rawRes);
+            
             // Setting guest login status to true
             dataStoreService.guestLoggedIn = res.success;
             
             // Ignoring strict type checking for this line
-            // @ts-ignore
             this.dataStoreService.authorizationToken = res.data.authorizationToken;
         });
 
