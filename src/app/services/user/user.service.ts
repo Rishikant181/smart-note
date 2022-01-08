@@ -52,6 +52,7 @@ export class UserService {
         cred.pass = hashCredential(cred.pass);
 
         // Sending input credentials to backend and getting back response
+        // Then piping the observable to a map function that returns the actual query response, stripped of additional graphql properties
         return this.apolloClient.query<any>({
             query: loginUserQuery(cred),
             context: options
@@ -72,6 +73,7 @@ export class UserService {
         cred.newPass = hashCredential(cred.newPass);
         
         // Sending new credentials to backend and getting back response
+        // Then piping the observable to a map function that returns the actual query response, stripped of additional graphql properties
         return this.apolloClient.mutate<any>({
             mutation: createAccountQuery(cred),
             context: options
