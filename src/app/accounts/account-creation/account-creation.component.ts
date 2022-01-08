@@ -13,11 +13,11 @@ import {
 import { Router } from '@angular/router';
 
 // Custom libs
-import { Response } from 'src/app/models/http';
 import { NewAccountDetails } from 'src/app/models/user.models';
 import { password } from 'src/app/validators/accounting';
 import { UserService } from 'src/app/services/user/user.service';
 import { DataStoreService } from 'src/app/services/data-store/data-store.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
     selector: 'app-account-creation',
@@ -90,10 +90,7 @@ export class AccountCreationComponent implements OnInit {
     // To handle clicking of create account
     submitClick(): void {
         this.userService.createAccount(new NewAccountDetails().deserialize(this.accountForm.value))
-            .subscribe((rawRes) => {
-                // Parsing raw response to a Response object
-                const res = new Response().deserialize(rawRes.data.signup);
-                
+            .subscribe((res) => {
                 // Checking if account created successfully
                 if(res.success) {
                     // Setting login and authorization status in global data store
