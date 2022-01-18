@@ -2,6 +2,33 @@
 
 @include mat.core();
 
+// CUSTOM COLOR PALETTES
+// PRIMARY
+$primary-light: (
+    50: #e6f5e4,
+    100: #c3e6bd,
+    200: #9ad693,
+    300: #6fc765,
+    400: #4abb41,
+    500: #16af0f,
+    600: #00a000,
+    700: #008e00,
+    800: #007d00,
+    900: #005f00,
+    contrast: (
+        50: #f4e4f3,
+        100: #e3bae2,
+        200: #d18ccf,
+        300: #bd5ebc,
+        400: #af38ae,
+        500: #a000a0,
+        600: #93009b,
+        700: #800094,
+        800: #70008c,
+        900: #520080
+    )
+);
+
 $mat-primary: mat.define-palette(mat.$blue-palette, 600);
 $mat-accent: mat.define-palette(mat.$blue-palette, 100);
 $mat-warn: mat.define-palette(mat.$red-palette, 400);
