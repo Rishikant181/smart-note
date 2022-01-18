@@ -1,0 +1,32 @@
+button {
+    margin: 5px;
+}
+
+.main-div {
+    text-align: center;
+}
+
+.main-div > mat-form-field {
+    width: 90%;
+}
+
+@media only screen and (max-width: 540px) {
+    .main-div {
+        width: 80vw;
+        aspect-ratio: 1 / 1.25;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    .main-div {
+        width: 50vw;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .main-div {
+        width: 25vw;
+        aspect-ratio: 1 / 1;
+    }
+}

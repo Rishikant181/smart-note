@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
 
     // To handle clicking on new project button
     newProjectClick(): void {
-        this.dialog.open(NewProjectComponent);
+        this.dialog.open(NewProjectComponent, { maxWidth: "100%" });
     }
 
 }
