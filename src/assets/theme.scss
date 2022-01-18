@@ -12,6 +12,33 @@ $green-light: mat.define-light-theme((
         primary: $mat-primary,
         accent: $mat-accent,
         warn: $mat-warn
+    ),
+    typography: mat.define-typography-config(
+        $font-family: 'Urbanist',
+        $title: mat.define-typography-level(
+            $font-size: 1.75rem,
+            $font-weight: 600
+        ),
+        $headline: mat.define-typography-level(
+            $font-size: 1.5rem,
+            $font-weight: 500
+        ),
+        $subheading-1: mat.define-typography-level(
+            $font-size: 1.25rem,
+            $font-weight: 400
+        ),
+        $body-1: mat.define-typography-level(
+            $font-size: 1rem,
+            $font-weight: 300
+        ),
+        $button: mat.define-typography-level(
+            $font-size: 1rem,
+            $font-weight: 500
+        ),
+        $caption: mat.define-typography-level(
+            $font-size: 1rem,
+            $font-weight: 300
+        )
     )
 ));
 
