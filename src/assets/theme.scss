@@ -2,45 +2,18 @@
 
 @include mat.core();
 
-// CUSTOM COLOR PALETTES
-// PRIMARY
-$primary-light: (
-    50: #e6f5e4,
-    100: #c3e6bd,
-    200: #9ad693,
-    300: #6fc765,
-    400: #4abb41,
-    500: #16af0f,
-    600: #00a000,
-    700: #008e00,
-    800: #007d00,
-    900: #005f00,
-    contrast: (
-        50: #f4e4f3,
-        100: #e3bae2,
-        200: #d18ccf,
-        300: #bd5ebc,
-        400: #af38ae,
-        500: #a000a0,
-        600: #93009b,
-        700: #800094,
-        800: #70008c,
-        900: #520080
-    )
-);
-
-$mat-primary: mat.define-palette(mat.$blue-palette, 600);
-$mat-accent: mat.define-palette(mat.$blue-palette, 100);
+$mat-primary: mat.define-palette(mat.$green-palette, 700);
+$mat-accent: mat.define-palette(mat.$green-palette, 200);
 $mat-warn: mat.define-palette(mat.$red-palette, 400);
-$mat-shadow: mat.define-palette(mat.$blue-gray-palette, 300);
-$mat-background: mat.define-palette(mat.$blue-gray-palette, 100);
+$mat-shadow: mat.define-palette(mat.$gray-palette, 50);
+$mat-background: mat.define-palette(mat.$green-palette, 50);
 
-$blue-light: mat.define-light-theme((
+$green-light: mat.define-light-theme((
     color: (
         primary: $mat-primary,
         accent: $mat-accent,
-        warn: $mat-warn,
+        warn: $mat-warn
     )
 ));
 
-@include mat.all-component-themes($blue-light);
+@include mat.all-component-themes($green-light);
