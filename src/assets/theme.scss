@@ -3,35 +3,36 @@
 
 // CUSTOM PALETTES
 $custom-green-light: (
-    50: #e8f5e6,
-    100: #c7e5c3,
-    200: #a3d59c,
-    300: #7dc674,
-    400: #61b956,
-    500: #44ad36,
-    600: #3a9e2e,
-    700: #2e8c22,
-    800: #217c17,
+    50: #e5f5e5,
+    100: #c1e6bf,
+    200: #98d595,
+    300: #6bc669,
+    400: #44ba46,
+    500: #00ad1d,
+    600: #009e12,
+    700: #008c00,
+    800: #007c00,
     900: #005d00,
     contrast: (
-        50: #f5e4ee,
-        100: #e5bbd6,
-        200: #d48ebc,
-        300: #c161a2,
-        400: #b23e8f,
-        500: #a31a7e,
-        600: #971579,
-        700: #870c72,
-        800: #78066b,
-        900: #5d005d
+        50: #f6e4f1,
+        100: #e8bbdc,
+        200: #d98dc6,
+        300: #c85faf,
+        400: #bb389f,
+        500: #ad0090,
+        600: #a0008b,
+        700: #8f0085,
+        800: #80007e,
+        900: #640071
     )
 );
 
-$mat-primary: mat.define-palette(mat.$green-palette, 700);
-$mat-accent: mat.define-palette(mat.$green-palette, 200);
+// Defining colors used by various components
+$mat-primary: mat.define-palette($custom-green-light, 900);
+$mat-accent: mat.define-palette($custom-green-light, 200);
 $mat-warn: mat.define-palette(mat.$red-palette, 400);
 $mat-shadow: mat.define-palette(mat.$gray-palette, 50);
-$mat-background: mat.define-palette(mat.$green-palette, 50);
+$mat-background: mat.define-palette($custom-green-light, 50);
 
 $green-light: mat.define-light-theme((
     color: (
