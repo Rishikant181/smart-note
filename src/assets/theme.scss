@@ -28,8 +28,8 @@ $custom-green-light: (
 );
 
 // Defining colors used by various components
-$mat-primary: mat.define-palette($custom-green-light, 900);
-$mat-accent: mat.define-palette($custom-green-light, 200);
+$mat-primary: mat.define-palette($custom-green-light, 500);
+$mat-accent: mat.define-palette($custom-green-light, 900);
 $mat-warn: mat.define-palette(mat.$red-palette, 400);
 $mat-shadow: mat.define-palette(mat.$gray-palette, 50);
 $mat-background: mat.define-palette($custom-green-light, 50);
