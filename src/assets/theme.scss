@@ -1,6 +1,32 @@
 @use '~@angular/material' as mat;
 @include mat.core();
 
+// CUSTOM PALETTES
+$custom-green: (
+    50: #e8f5e6,
+    100: #c7e5c3,
+    200: #a3d59c,
+    300: #7dc674,
+    400: #61b956,
+    500: #44ad36,
+    600: #3a9e2e,
+    700: #2e8c22,
+    800: #217c17,
+    900: #005d00,
+    contrast: (
+        50: #f5e4ee,
+        100: #e5bbd6,
+        200: #d48ebc,
+        300: #c161a2,
+        400: #b23e8f,
+        500: #a31a7e,
+        600: #971579,
+        700: #870c72,
+        800: #78066b,
+        900: #5d005d
+    )
+)
+
 $mat-primary: mat.define-palette(mat.$green-palette, 700);
 $mat-accent: mat.define-palette(mat.$green-palette, 200);
 $mat-warn: mat.define-palette(mat.$red-palette, 400);
@@ -12,33 +38,6 @@ $green-light: mat.define-light-theme((
         primary: $mat-primary,
         accent: $mat-accent,
         warn: $mat-warn
-    ),
-    typography: mat.define-typography-config(
-        $font-family: 'Urbanist',
-        $title: mat.define-typography-level(
-            $font-size: 1.75rem,
-            $font-weight: 600
-        ),
-        $headline: mat.define-typography-level(
-            $font-size: 1.5rem,
-            $font-weight: 500
-        ),
-        $subheading-1: mat.define-typography-level(
-            $font-size: 1.25rem,
-            $font-weight: 400
-        ),
-        $body-1: mat.define-typography-level(
-            $font-size: 1rem,
-            $font-weight: 300
-        ),
-        $button: mat.define-typography-level(
-            $font-size: 1rem,
-            $font-weight: 500
-        ),
-        $caption: mat.define-typography-level(
-            $font-size: 1rem,
-            $font-weight: 300
-        )
     )
 ));
 
