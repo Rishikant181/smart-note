@@ -2,7 +2,7 @@
 @include mat.core();
 
 // CUSTOM PALETTES
-$custom-green: (
+$custom-green-light: (
     50: #e8f5e6,
     100: #c7e5c3,
     200: #a3d59c,
@@ -25,7 +25,7 @@ $custom-green: (
         800: #78066b,
         900: #5d005d
     )
-)
+);
 
 $mat-primary: mat.define-palette(mat.$green-palette, 700);
 $mat-accent: mat.define-palette(mat.$green-palette, 200);
